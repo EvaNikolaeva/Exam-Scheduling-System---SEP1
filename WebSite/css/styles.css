@@ -1,0 +1,65 @@
+/*Trying to make the carousel fit the screen*/
+#carousel1 {
+    height: 100%;
+    
+}
+.carousel-inner, .carousel, .active, .carousel-item {
+    height: 100%;
+}
+body, html {
+    background-color: aliceblue;
+    height: 100%;
+}
+/*trying to make the styling for the navbar, had to copy from assignment*/
+a {
+    color: floralwhite;
+}
+
+a:link, button, .btn, .dropdown {
+  text-decoration: none;
+    color: greenyellow;
+}
+
+a:visited, button, .btn, .dropdown{
+  text-decoration: none;
+    color: greenyellow;
+}
+
+a:hover, button, .btn:hover, .dropdown{
+  text-decoration: none;
+    color: white;
+}
+
+a:active, button, .btn, .dropdown {
+  text-decoration: none;
+    color: greenyellow;
+}
+
+li {
+    display: inline-block;
+    margin: 1px;
+    margin-left: 10px;
+}
+
+#board {    
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.buttonModal {
+    position: relative;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(+80%, +300%);
+}
+#textP {
+    position: relative;
+    position: absolute;
+    font-size: 25px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-5%, +270%);
+}

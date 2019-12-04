@@ -1,0 +1,39 @@
+body, html {
+    background-image: url(../images/bluebackground.png);
+    background-repeat: round;
+    height: 100%;
+    font-family: "Segoe UI";
+}
+a {
+    color: #212121;
+}
+a:active {
+    color: #212121;
+}
+a:hover {
+    color: #757575;
+}
+/*making the page layout to be smaller than the actual page and changing the font of the carousel headings*/
+#page {
+    margin: 15%;
+    margin-top: 2%;
+    background-color: #B3E5FC/*Colour taken from Materialpallete.com / Check palette.css in css folder for some of the colours I'll be using for the whole page*/;
+}
+/*Making some changes on the navigation bar, like font, size, color and padding*/
+
+#navigation {
+    background-color: #FFEB3B;
+}
+.nav-item {
+    color: #212121;
+    padding-left: 15px;
+    font-size: 18px;
+    font-family: sans-serif, "Times New Roman";
+}
+.nav-item:hover {
+    color: #757575;
+}
+/*Styling for the dropdown button/menu*/
+.dropdownMenu {
+    padding: 35px;
+}

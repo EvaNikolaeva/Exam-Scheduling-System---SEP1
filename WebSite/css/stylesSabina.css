@@ -1,0 +1,127 @@
+body,
+html {
+    background-image: url(../images/bluebackground.png);
+    height: 100%;
+}
+
+/*making the page layout to be smaller than the actual page and changing the font of the carousel headings*/
+#page {
+    margin: 15%;
+    margin-top: 2%;
+    background-color: #FFFFFF
+        /*Colour taken from Materialpallete.com / Check palette.css in css folder for some of the colours I'll be using for the whole page*/
+    ;
+}
+
+h3 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    
+}
+
+/*Making some changes on the navigation bar, like font, size, color and padding*/
+
+#navigation {
+    background-color: #FFEB3B;
+}
+
+.nav-item {
+    color: #212121;
+    padding-left: 15px;
+    font-size: 18px;
+    font-family: sans-serif, "Times New Roman";
+}
+
+.nav-item:hover {
+    color: #757575;
+}
+
+/* css for exam types */
+
+h2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.img_during_exam {
+    padding-top: 80px;
+}
+
+.img_oral_exam {
+    padding-bottom: 20px;
+}
+
+.heading_exam_types {
+    border-style: groove;
+    border-color: #B3E5FC;
+    text-align: center;
+    font-size: 120%;
+}
+
+/* css for rules */
+
+ .img_exam_ahead {
+    padding-top: 30px;
+}
+
+.img_essentials {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.img_assignment {
+    padding-top: 30px;
+}
+/*Feature styling*/
+#feature {
+    padding: 35px;
+}
+.featureImagesAndText:hover {
+    color: grey;
+}
+/*News styling*/
+#news {
+    background-image: url(../images/lines.png);
+    padding: 35px;
+}
+#newsSection {
+    font-size: 18px;
+}
+/*Reminders styling*/
+.reminders {
+    padding: 15px;
+}
+/*Memes styling*/
+#memeImage {
+    background-image: url(../images/lines.png);
+}
+.memeHeading {
+    padding: 15px;
+}
+.memeImage {
+    padding: 10px;
+}
+/*Footer styling*/
+.subscribe {
+    color: white;
+}
+
+
+.hoverFix:hover {
+    color: grey !important;
+}
+.dropdownButton {
+    color: black;
+    word-wrap: break-word;
+}
+.dropdownMenu {
+    padding: 20px;
+    word-wrap: break-word;
+}
+.infoSchedule {
+    padding: 10px;
+}
+.buttonText {
+    white-space: normal;
+}
+
+
+
