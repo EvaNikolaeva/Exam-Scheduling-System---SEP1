@@ -1,3 +1,4 @@
+package Model;
 public class Equipment
 {
     private boolean isHDMI;
@@ -7,7 +8,7 @@ public class Equipment
     private int numberOfChairs;
     private int numberOfTables;
 
-    Equipment(boolean isHDMI, boolean isVGA, boolean isDisplayPort, boolean isProjector, int numberOfChairs, int numberOfTables)
+    public Equipment(boolean isHDMI, boolean isVGA, boolean isDisplayPort, boolean isProjector, int numberOfChairs, int numberOfTables)
     {
         this.isHDMI = isHDMI;
         this.isVGA = isVGA;
