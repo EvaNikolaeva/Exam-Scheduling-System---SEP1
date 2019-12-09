@@ -1,3 +1,4 @@
+package Model;
 public class Examiner
 {
     private String firstName;
