@@ -7,13 +7,14 @@ public class Examiner
     private String teacherId;
     private boolean availability;
     private String course;
+    private boolean external;
 
-    public Examiner(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course)
+    public Examiner(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course, boolean external)
     {
-        set(firstName, lastName, phoneNumber, teacherId, availability, course);
+        set(firstName, lastName, phoneNumber, teacherId, availability, course, external);
     }
 
-    public void set(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course)
+    public void set(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course, boolean external)
     {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,6 +22,7 @@ public class Examiner
         this.teacherId = teacherId;
         this.availability = availability;
         this.course = course;
+        this.external = external;
     }
 
     public String getFirstName()
@@ -83,11 +85,21 @@ public class Examiner
         this.course = course;
     }
 
+    public boolean isExternal()
+    {
+        return external;
+    }
+
+    public void setExternal(boolean external)
+    {
+        this.external = external;
+    }
+
     public String toString()
     {
         String s = "";
         s += "Examiner name: " + firstName + " " + lastName + ", phone number: " + phoneNumber + ", id: " + teacherId +
-                ", course: " + course + ", is available: " + availability;
+                ", course: " + course + ", is available: " + availability + ", is external: " + external;
         return s;
     }
 
@@ -99,6 +111,7 @@ public class Examiner
          }
          Examiner other = (Examiner)obj;
          return firstName.equals(other.firstName) && lastName.equals(other.lastName) && phoneNumber.equals(other.phoneNumber)
-                 && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course);
+                 && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course)
+                 && external == other.external;
     }
 }
