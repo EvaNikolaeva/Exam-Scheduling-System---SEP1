@@ -65,9 +65,9 @@ public class Exam
         return date1;
     }
 
-    public void setFirstDate(MyDate date1)
+    public void setFirstDate(MyDate date)
     {
-        this.date1 = date1;
+        this.date1 = date;
     }
 
     public MyDate getSecondDate()
@@ -75,9 +75,9 @@ public class Exam
         return date2;
     }
 
-    public void setSecondDate(MyDate date2)
+    public void setSecondDate(MyDate date)
     {
-        this.date2 = date2;
+        this.date2 = date;
     }
 
     public MyDate getThirdDate()
@@ -85,9 +85,9 @@ public class Exam
         return date3;
     }
 
-    public void setThirdDate(MyDate date3)
+    public void setThirdDate(MyDate date)
     {
-        this.date3 = date3;
+        this.date3 = date;
     }
 
     public String getCourse()
@@ -131,9 +131,9 @@ public class Exam
         return examiner1;
     }
 
-    public void setFirstExaminer(Examiner examiner1)
+    public void setFirstExaminer(Examiner examiner)
     {
-        this.examiner1 = examiner1;
+        this.examiner1 = examiner;
     }
 
     public Examiner getSecondExaminer()
@@ -141,9 +141,9 @@ public class Exam
         return examiner2;
     }
 
-    public void setSecondExaminer(Examiner examiner2)
+    public void setSecondExaminer(Examiner examiner)
     {
-        this.examiner2 = examiner2;
+        this.examiner2 = examiner;
     }
 
     public Examiner getThirdExaminer()
@@ -151,9 +151,9 @@ public class Exam
         return examiner3;
     }
 
-    public void setThirdExaminer(Examiner examiner3)
+    public void setThirdExaminer(Examiner examiner)
     {
-        this.examiner3 = examiner3;
+        this.examiner3 = examiner;
     }
 
     public Room getRoom()
