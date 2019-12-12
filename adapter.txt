@@ -1,0 +1,1 @@
+{"exams":[{"date1":{"day":13,"month":1,"year":2020},"course":"SDJ","type":"Oral","examiner1":{"firstName":"Steffen","lastName":"Andersen","phoneNumber":"09876","teacherId":"1234","availability":true,"course":"SDJ"},"room":{"equipment":{"hasCables":true,"hasProjector":true,"numberOfChairs":30,"numberOfTables":10},"availability":true}}]}
