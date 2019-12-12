@@ -38,17 +38,17 @@ public class ExaminerList
         return examinersByCourse;
     }
 
-    public ArrayList<Examiner> getAvailableExaminersByCourse(boolean availability, String course)
+    public ArrayList<Examiner> seeAvailableExaminers(boolean availability)
     {
-        ArrayList<Examiner> availableExaminersByCourse = new ArrayList<>();
+        ArrayList<Examiner> availableExaminers = new ArrayList<>();
         for (int i = 0; i < examiners.size(); i++)
         {
-            if (examiners.get(i).isAvailable() && examiners.get(i).getCourse().equals(course))
+            if (examiners.get(i).isAvailable() == true)
             {
-                availableExaminersByCourse.add(examiners.get(i));
+                availableExaminers.add(examiners.get(i));
             }
         }
-        return availableExaminersByCourse;
+        return availableExaminers;
     }
 
     public String toString()
@@ -56,7 +56,7 @@ public class ExaminerList
         String s = "";
         for (int i = 0; i < examiners.size(); i++)
         {
-            s += examiners.get(i).toString() + "/n";
+            s += examiners.get(i).toString() + ", ";
         }
         return s;
     }

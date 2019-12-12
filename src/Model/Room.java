@@ -53,6 +53,15 @@ public class Room
         this.availability = availability;
     }
 
+    public boolean isAvailable(Room room)
+    {
+        if(room.getAvailability() == true)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public String toString()
     {
         return room + ", Equipment: " + equipment + ", Available: " + availability;

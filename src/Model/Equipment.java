@@ -1,47 +1,45 @@
 package Model;
 public class Equipment
 {
-    private boolean isHDMI;
-    private boolean isVGA;
-    private boolean isDisplayPort;
-    private boolean isProjector;
+    private boolean hasCables;
+    private boolean hasProjector;
     private int numberOfChairs;
     private int numberOfTables;
 
-    public Equipment(boolean isHDMI, boolean isVGA, boolean isDisplayPort, boolean isProjector, int numberOfChairs, int numberOfTables)
+    public Equipment(boolean hasCables, boolean hasProjector, int numberOfChairs, int numberOfTables)
     {
-        this.isHDMI = isHDMI;
-        this.isVGA = isVGA;
-        this.isDisplayPort = isDisplayPort;
-        this.isProjector = isProjector;
-        if(numberOfChairs <= 100)
+        this.hasCables = hasCables;
+        this.hasProjector = hasProjector;
+
+        if(numberOfChairs >= 100 || numberOfChairs <= 0)
+        {
+            System.out.println("Try again, wrong chair number input.");
+        }
+
+        if(numberOfChairs <= 100 && numberOfChairs >= 0)
         {
             this.numberOfChairs = numberOfChairs;
         }
-        if(numberOfTables <= 100)
+
+        if(numberOfTables >= 100 || numberOfTables <= 0)
+        {
+            System.out.println("Try again, wrong table number input.");
+        }
+
+        if(numberOfTables <= 100 && numberOfTables >= 0)
         {
             this.numberOfTables = numberOfTables;
         }
     }
 
-    public boolean getHDMI()
+    public boolean getCables()
     {
-        return isHDMI;
-    }
-
-    public boolean getVGA()
-    {
-        return isVGA;
-    }
-
-    public boolean getDisplayPort()
-    {
-        return isDisplayPort;
+        return hasCables;
     }
 
     public boolean getProjector()
     {
-        return isProjector;
+        return hasProjector;
     }
 
     public int getNumberOfChairs()
@@ -54,41 +52,46 @@ public class Equipment
         return numberOfTables;
     }
 
-    public void setHDMI(boolean HDMI)
+    public void setCables(boolean hasCables)
     {
-        isHDMI = HDMI;
-    }
-
-    public void setVGA(boolean VGA)
-    {
-        isVGA = VGA;
-    }
-
-    public void setDisplayPort(boolean displayPort)
-    {
-        isDisplayPort = displayPort;
+        this.hasCables = hasCables;
     }
 
     public void setProjector(boolean projector)
     {
-        isProjector = projector;
+        hasProjector = projector;
     }
 
     public void setNumberOfChairs(int numberOfChairs)
     {
-        this.numberOfChairs = numberOfChairs;
+        if(numberOfChairs >= 100 || numberOfChairs <= 0)
+        {
+            System.out.println("Try again, wrong  chair number input.");
+        }
+
+        if(numberOfChairs <= 100 && numberOfChairs >= 0)
+        {
+            this.numberOfChairs = numberOfChairs;
+        }
     }
 
     public void setNumberOfTables(int numberOfTables)
     {
-        this.numberOfTables = numberOfTables;
+        if(numberOfTables >= 100 || numberOfTables <= 0)
+        {
+            System.out.println("Try again, wrong table number input.");
+        }
+
+        if(numberOfTables <= 100 && numberOfTables >= 0)
+        {
+            this.numberOfTables = numberOfTables;
+        }
     }
 
     public String toString()
     {
-        return "HDMI: " + isHDMI + ", VGA: " + isVGA + ", Display port: " + isDisplayPort
-                + ", Projector: " + isDisplayPort + ", Number of chairs: " + numberOfChairs
-                + ", Number of tables: " + numberOfTables;
+        return "Cables: " + hasCables + ", Projector: " + hasProjector +
+                ", Number of chairs: " + numberOfChairs + ", Number of tables: " + numberOfTables;
     }
 
     public boolean equals(Object obj)
@@ -96,8 +99,7 @@ public class Equipment
         if(!(obj instanceof Equipment))
             return false;
         Equipment other = (Equipment) obj;
-        return isHDMI == other.isHDMI && isVGA == other.isVGA && isDisplayPort == other.isDisplayPort
-                && isProjector == other.isProjector && numberOfChairs == other.numberOfChairs &&
-                numberOfTables == other.numberOfTables;
+        return hasCables == other.hasCables && hasProjector == other.hasProjector &&
+                numberOfChairs == other.numberOfChairs && numberOfTables == other.numberOfTables;
     }
 }
