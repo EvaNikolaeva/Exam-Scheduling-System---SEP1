@@ -38,25 +38,26 @@ public class ExaminerList
         return examinersByCourse;
     }
 
-    public ArrayList<Examiner> seeAvailableExaminers(boolean availability)
+    public ArrayList<Examiner> getAvailableExaminersByCourse(boolean availability, String course)
     {
-        ArrayList<Examiner> availableExaminers = new ArrayList<>();
+        ArrayList<Examiner> availableExaminersByCourse = new ArrayList<>();
         for (int i = 0; i < examiners.size(); i++)
         {
-            if (examiners.get(i).isAvailable() == true)
+            if (examiners.get(i).isAvailable() && examiners.get(i).getCourse().equals(course))
             {
-                availableExaminers.add(examiners.get(i));
+                availableExaminersByCourse.add(examiners.get(i));
             }
         }
-        return availableExaminers;
+        return availableExaminersByCourse;
     }
 
     public String toString()
     {
+        String s = "";
         for (int i = 0; i < examiners.size(); i++)
         {
-            return examiners.get(i).toString() + "/n";
+            s += examiners.get(i).toString() + "/n";
         }
-        return null;
+        return s;
     }
 }
