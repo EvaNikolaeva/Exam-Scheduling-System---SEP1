@@ -1,24 +1,47 @@
 package Model;
 
+import Adapters.NotepadAdapterClass;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ExamList
 {
     private ArrayList<Exam> exams;
+    private NotepadAdapterClass saver;
 
     public ExamList()
     {
         this.exams = new ArrayList<>();
+        this.saver = new NotepadAdapterClass();
+        exams = saver.loadExamList();
     }
 
-    public void addExam(Exam exam)
+    public void addExam(Exam exam) //the adapter saves the newly-added exam to the arraylist after the new exam has been
+            //added, meaning it updates automatically - Eva
     {
         exams.add(exam);
+        try
+        {
+            saver.saveExamList(exams);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
-    public void removeExam(Exam exam)
+    public void removeExam(Exam exam) //same thing for here and getExam
     {
         exams.remove(exam);
+        try
+        {
+            saver.saveExamList(exams);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public Exam getExam(int index)
