@@ -19,7 +19,7 @@ public class Examiner
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.teacherId = teacherId;
-        this.availability = availability;
+        this.availability = true;
         this.course = course;
     }
 

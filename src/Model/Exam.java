@@ -2,9 +2,7 @@ package Model;
 
 public class Exam
 {
-    private MyDate date1;
-    private MyDate date2;
-    private MyDate date3;
+    private MyDate date;
     private String course;
     private String semester;
     private String type;
@@ -15,36 +13,15 @@ public class Exam
     public static final String LEGAL_SEMESTERS[] = {"1X", "1Y", "1Z", "2X", "2Y", "2Z", "3X", "3Y", "3Z", "4X", "4Y", "4Z"};
     public static final String LEGAL_EXAMS[] = {"SDJ", "RWD", "MSE", "NES", "CAO", "DMP", "SEP"};
 
-    public Exam(MyDate date1, MyDate date2, MyDate date3, String course, String semester, String type, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
+    public Exam(MyDate date, String course, String semester, String type, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
     {
-        setAll(date1, date2, date3, course, semester, type, room, examiner1, examiner2, examiner3);
+        setAll(date, course, semester, type, room, examiner1, examiner2, examiner3);
     }
 
-    public Exam(MyDate date1, String course, String semester, String type, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
-    {
-        this.date1 = date1;
-        this.date2 = null;
-        this.date3 = null;
-        if (isLegalCourse(course))
-        {
-            this.course = course;
-        }
-        if (isLegalSemester(semester))
-        {
-            this.semester = semester;
-        }
-        this.type = type;
-        this.room = room;
-        this.examiner1 = examiner1;
-        this.examiner2 = examiner2;
-        this.examiner3 = null;
-    }
 
-    public Exam(MyDate date1, String course, String semester, String type, Room room, Examiner examiner1)
+    public Exam(MyDate date, String course, String semester, String type, Room room, Examiner examiner1)
     {
-        this.date1 = date1;
-        this.date2 = null;
-        this.date3 = null;
+        this.date = date;
         if (isLegalCourse(course))
         {
             this.course = course;
@@ -60,34 +37,14 @@ public class Exam
         this.examiner3 = null;
     }
 
-    public MyDate getFirstDate()
+    public MyDate getDate()
     {
-        return date1;
+        return date;
     }
 
-    public void setFirstDate(MyDate date)
+    public void setDate(MyDate date)
     {
-        this.date1 = date;
-    }
-
-    public MyDate getSecondDate()
-    {
-        return date2;
-    }
-
-    public void setSecondDate(MyDate date)
-    {
-        this.date2 = date;
-    }
-
-    public MyDate getThirdDate()
-    {
-        return date3;
-    }
-
-    public void setThirdDate(MyDate date)
-    {
-        this.date3 = date;
+        this.date = date;
     }
 
     public String getCourse()
@@ -166,11 +123,9 @@ public class Exam
         this.room = room;
     }
 
-    public void setAll(MyDate date1, MyDate date2, MyDate date3, String course, String semester, String type, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
+    public void setAll(MyDate date, String course, String semester, String type, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
     {
-        this.date1 = date1;
-        this.date2 = date2;
-        this.date3 = date3;
+        this.date = date;;
         if (isLegalCourse(course))
         {
             this.course = course;
@@ -206,21 +161,16 @@ public class Exam
             return false;
         }
         Exam other = (Exam)obj;
-        return date1.equals(other.date1) && date2.equals(other.date2) && date3.equals(other.date3) &&
-                course.equals(other.course) && type.equals(other.type) && semester.equals(other.semester) &&
-                examiner1.equals(other.examiner1) && examiner2.equals(other.examiner2) && examiner3.equals(other.examiner3)
-                && room.equals(other.room);
+        return date.equals(other.date) && course.equals(other.course) && type.equals(other.type) &&
+                semester.equals(other.semester) && examiner1.equals(other.examiner1) && examiner2.equals(other.examiner2)
+                && examiner3.equals(other.examiner3) && room.equals(other.room);
     }
 
     public String toString()
     {
         String s = "";
-        s += "Course: " + course + semester + ", type: " + type + ", date: " + date1;
-        if (course.equals("SDJ") || course.equals("SEP"))
-        {
-            s += ", " + date2 + ", " + date3;
-        }
-        s += ", room: " + room + ", examiners: " + examiner1 + ", " + examiner2 + ", " + examiner3;
+        s += "Course: " + course + semester + ", type: " + type + ", date: " + date + ", room: " + room + ", examiners: "
+                + examiner1 + ", " + examiner2 + ", " + examiner3;
         return s;
     }
 }
