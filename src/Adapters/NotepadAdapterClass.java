@@ -1,7 +1,6 @@
 package Adapters;
 
 import Model.ExamList;
-import Model.ExaminerList;
 import com.google.gson.Gson;
 
 import java.io.File;
