@@ -21,9 +21,9 @@ public class ExamList
         exams.remove(exam);
     }
 
-    public void changeExam(Exam exam)
+    public Exam getExam(int index)
     {
-
+        return exams.get(index);
     }
 
     public ArrayList<Exam> getExamsByDate(MyDate date)
@@ -31,14 +31,7 @@ public class ExamList
         ArrayList<Exam> examsByDate = new ArrayList<>();
         for (int i = 0; i < exams.size(); i++)
         {
-            if (exams.get(i).getCourse().equals("SDJ") || exams.get(i).getCourse().equals("SEP"))
-            {
-                if (exams.get(i).getFirstDate().equals(date) || exams.get(i).getSecondDate().equals(date) || exams.get(i).getThirdDate().equals(date))
-                {
-                    examsByDate.add(exams.get(i));
-                }
-            }
-            else if (exams.get(i).getFirstDate().equals(date))
+            if (exams.get(i).getDate().equals(date))
             {
                 examsByDate.add(exams.get(i));
             }
