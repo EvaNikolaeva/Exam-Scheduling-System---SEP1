@@ -9,59 +9,20 @@ import java.util.ArrayList;
 public class ExamList
 {
     private ArrayList<Exam> exams;
-    private NotepadAdapterClass saver;
-    private Backup backup;
 
     public ExamList()
     {
         this.exams = new ArrayList<>();
-        this.saver = new NotepadAdapterClass();
-        this.backup = new Backup();
-        exams = saver.loadExamList();
-        exams = backup.loadExamList();
     }
 
-    public void addExam(Exam exam) //the adapter saves the newly-added exam to the arraylist after the new exam has been
-            //added, meaning it updates automatically - Eva
+    public void addExam(Exam exam)
     {
         exams.add(exam);
-        try
-        {
-            saver.saveExamList(exams);
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        try
-        {
-            backup.saveExamList(exams);
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
     }
 
-    public void removeExam(Exam exam) //same thing for here and getExam
+    public void removeExam(Exam exam)
     {
         exams.remove(exam);
-        try
-        {
-            saver.saveExamList(exams);
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        try
-        {
-            backup.saveExamList(exams);
-        }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        }
     }
 
     public Exam getExam(int index)

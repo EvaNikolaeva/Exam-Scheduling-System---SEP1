@@ -45,8 +45,7 @@ public class Backup
         }
 
         String line = "";
-        while(in.hasNext())
-        {
+        while(in.hasNext())        {
             line += in.nextLine();
         }
         in.close();
