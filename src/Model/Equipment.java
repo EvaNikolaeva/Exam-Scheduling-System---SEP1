@@ -67,6 +67,7 @@ public class Equipment
         if(numberOfChairs >= 100 || numberOfChairs <= 0)
         {
             System.out.println("Try again, wrong  chair number input.");
+            //should it be null? if not, should it stay the same but in red??
         }
 
         if(numberOfChairs <= 100 && numberOfChairs >= 0)

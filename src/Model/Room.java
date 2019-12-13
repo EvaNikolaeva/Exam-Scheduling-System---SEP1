@@ -13,13 +13,30 @@ public class Room
     public Room(Equipment equipment, String room, boolean availability)
     {
         this.equipment = equipment;
-        for(int i = 0; i < ROOM_LIST.length; i++)
-        {
-            if(room.equals(ROOM_LIST[i]))
+
+            try
             {
-                this.room = room;
+                for(int i = 0; i < ROOM_LIST.length; i++)
+                {
+                    if(room.equals(ROOM_LIST[i]))
+                    {
+                        this.room = room;
+                    }
+                }
+                for(int i = 0; i < ROOM_LIST.length; i++)
+                {
+                    if(!(room.equals(ROOM_LIST)))
+                    {
+                        System.out.println("Please input the correct room ID.");
+                    }
+                }
+
             }
-        }
+            catch (NullPointerException e)
+            {
+            e.printStackTrace();
+            }
+
         this.availability = availability;
     }
 
@@ -40,7 +57,7 @@ public class Room
 
     public void setEquipment(Equipment equipment)
     {
-        this.equipment = equipment;
+            this.equipment = equipment;
     }
 
     public void setRoom(String room)

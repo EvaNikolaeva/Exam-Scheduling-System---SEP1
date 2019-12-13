@@ -3,6 +3,7 @@ package Adapters;
 import Model.*;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class Main
 {
@@ -17,8 +18,8 @@ public class Main
         Room sdjRoom = new Room(roomEq, "E301", true);
         Exam sdj = new Exam(sdjDate, "SDJ", "1", "Oral", sdjRoom, steffen);
         
-        ExamList thisDate = new ExamList();
-        thisDate.addExam(sdj);
+        ArrayList<Exam> thisDate = new ArrayList<>();
+        thisDate.add(sdj);
 
         try
         {
