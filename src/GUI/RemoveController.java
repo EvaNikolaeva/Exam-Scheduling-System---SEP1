@@ -1,4 +1,4 @@
-package UI;
+package GUI;
 
 import Model.Model;
 import javafx.event.ActionEvent;

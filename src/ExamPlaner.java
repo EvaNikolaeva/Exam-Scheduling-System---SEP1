@@ -1,6 +1,6 @@
+import GUI.ViewHandler;
 import Model.Model;
 import Model.ModelManager;
-import UI.ViewHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
