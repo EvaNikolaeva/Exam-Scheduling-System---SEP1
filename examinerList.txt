@@ -1,1 +1,0 @@
-{"examiners":[{"firstName":"Steffen","lastName":"Andersen","phoneNumber":"981234","teacherId":"1234","availability":true,"course":"SDJ"},{"firstName":"Line","lastName":"Egsgaard","phoneNumber":"123957","teacherId":"2345","availability":true,"course":"RWD"},{"firstName":"Lars","lastName":"Bjornen","phoneNumber":"018234","teacherId":"3456","availability":true,"course":"MSE"}]}

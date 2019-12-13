@@ -15,7 +15,7 @@ public class NotepadAdapterClass
     public void saveExamList(ArrayList<Exam> toSave) throws FileNotFoundException
     {
         Gson gson = new Gson();
-        String filename = "adapter.txt";
+        String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\adapter.txt";
         File file = new File(filename);
 
         String convert = gson.toJson(toSave);

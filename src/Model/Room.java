@@ -23,14 +23,6 @@ public class Room
                         this.room = room;
                     }
                 }
-                for(int i = 0; i < ROOM_LIST.length; i++)
-                {
-                    if(!(room.equals(ROOM_LIST)))
-                    {
-                        System.out.println("Please input the correct room ID.");
-                    }
-                }
-
             }
             catch (NullPointerException e)
             {

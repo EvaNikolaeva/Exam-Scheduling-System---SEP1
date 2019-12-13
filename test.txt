@@ -1,1 +1,0 @@
-{"hasCables":true,"hasProjector":false,"numberOfChairs":4,"numberOfTables":5}
