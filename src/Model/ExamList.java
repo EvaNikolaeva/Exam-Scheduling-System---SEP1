@@ -1,5 +1,6 @@
 package Model;
 
+import Adapters.Backup;
 import Adapters.NotepadAdapterClass;
 
 import java.io.FileNotFoundException;
@@ -9,12 +10,15 @@ public class ExamList
 {
     private ArrayList<Exam> exams;
     private NotepadAdapterClass saver;
+    private Backup backup;
 
     public ExamList()
     {
         this.exams = new ArrayList<>();
         this.saver = new NotepadAdapterClass();
+        this.backup = new Backup();
         exams = saver.loadExamList();
+        exams = backup.loadExamList();
     }
 
     public void addExam(Exam exam) //the adapter saves the newly-added exam to the arraylist after the new exam has been
@@ -29,6 +33,14 @@ public class ExamList
         {
             e.printStackTrace();
         }
+        try
+        {
+            backup.saveExamList(exams);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void removeExam(Exam exam) //same thing for here and getExam
@@ -37,6 +49,14 @@ public class ExamList
         try
         {
             saver.saveExamList(exams);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        try
+        {
+            backup.saveExamList(exams);
         }
         catch (FileNotFoundException e)
         {
