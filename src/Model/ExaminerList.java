@@ -61,4 +61,16 @@ public class ExaminerList
         }
         return s;
     }
+
+    public int getSize() {
+        return examiners.size();
+    }
+
+    public Examiner getExaminer(int i) {
+        return examiners.get(i);
+    }
+
+    public void setAll(ArrayList arrayList) {
+        this.examiners= arrayList;
+    }
 }

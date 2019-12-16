@@ -2,14 +2,16 @@ package Model;
 
 public class Course
 {
+    private int semester;
     private String name;
     private String type;
     private int numberOfStudents;
     public static final String LEGAL_COURSES[] = {"SDJ1X", "SDJ1Y", "SDJ1Z", "RWD1X", "RWD1Y", "RWD1Z", "MSE1X", "MSE1Y",
             "MSE1Z", "SEP1X", "SEP1Y", "SEP1Z", "SDJ2", "SDJ3X", "SDJ3Y", "SEP2", "NES1X", "NES1Y", "DNP1X", "DNP1Y", "DBS1"};
 
-    public Course(String name, String type, int numberOfStudents)
+    public Course(String name, String type, int numberOfStudents, int semester)
     {
+        this.semester = semester;
         setCourse(name, type, numberOfStudents);
     }
 
@@ -73,7 +75,7 @@ public class Course
                 throw new IllegalArgumentException("Illegal argument for course!!!!");
 
             } else {
-                System.out.println("success");
+                System.out.println("Valid course details added!!");
             }
         }
 

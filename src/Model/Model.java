@@ -7,14 +7,19 @@ public interface Model {
     CourseList courseList = null;
     ExaminerList examinerList = null;
     RoomList roomList = null;
+    ExamList examList = null;
 
     public boolean validateLogin(String username, String password);
-    public void saveExam();
-    public void deleteExam(int index);
-    public void saveCourse();
-    public void deleteCourse(int index);
-    public void saveExaminer(String Name, String phoneNumber, String Id,Course Course);
-    public void deleteExaminer(int index);
+
+
+
+    public void saveRoom(Room room);
+    public void saveExam(Exam exam);
+    public void deleteExam(Exam exam);
+    public void saveCourse(Course course);
+    public void deleteCourse(Course course);
+    public void saveExaminer(Examiner examiner);
+    public void deleteExaminer(Examiner examiner);
 
     public ArrayList<Course> getDisplayableCourseList(); //just name.
     public ArrayList<Examiner> getDisplayableExaminerList();// just name and id.

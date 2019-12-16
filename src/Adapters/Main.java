@@ -13,9 +13,9 @@ public class Main
 
         MyDate date = new MyDate(10, 1, 2020);
         Equipment eq = new Equipment(true ,true, 10, 10);
-        Room room = new Room(eq, "A201", true);
-        Course course = new Course("RWD1X", "Written", 35);
-        Examiner line = new Examiner("Line Egsgaard", "23569641", "1234",  "RWD", false);
+        Room room = new Room(eq, "A201");
+        Course course = new Course("RWD1X", "Written", 35, 1);
+        Examiner line = new Examiner("Line Egsgaard", "23569641", "1234",  course);
         Exam rwd = new Exam(date, course, room, line);
 
         ArrayList<Exam> one = new ArrayList<>();

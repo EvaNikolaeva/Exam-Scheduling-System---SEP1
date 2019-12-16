@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ManageDataController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ManageDataController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -76,6 +68,12 @@
                         <Button id="CourseRemoveButton" fx:id="courseRemoveButton" layoutX="419.0" layoutY="323.0" mnemonicParsing="false" onAction="#onCourseRemoveButtonPressed" text="Remove" />
                         <ComboBox id="CourseComboBox" fx:id="courseChooseComboBox" layoutX="355.0" layoutY="29.0" onAction="#onCourseChooseComboboxSelected" prefWidth="150.0" promptText="Choose.." />
                         <Button layoutX="22.0" layoutY="323.0" mnemonicParsing="false" onAction="#onGoBackButton" text="Go back" />
+                        <ComboBox fx:id="courseSemesterComboBox" layoutX="176.0" layoutY="173.0" prefWidth="150.0" />
+                        <Label fx:id="SemesterLabel" layoutX="14.0" layoutY="173.0" text="Semester:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
             </content>
@@ -97,13 +95,13 @@
                            </font>
                         </Label>
                         <Button id="roomSaveButton" fx:id="roomSaveButton" layoutX="508.0" layoutY="313.0" mnemonicParsing="false" onAction="#onRoomSaveButtonPressed" text="Save room" />
-                        <Label layoutX="14.0" layoutY="154.0" text="Ports:">
+                        <Label layoutX="14.0" layoutY="154.0" text="Equipment">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <CheckBox id="roomPortHDMICheck" fx:id="roomPortsHDMICheck" layoutX="159.0" layoutY="159.0" mnemonicParsing="false" text="HDMI" />
-                        <CheckBox id="roomPortVGACheck" fx:id="roomPortsVGACheck" layoutX="238.0" layoutY="159.0" mnemonicParsing="false" text="VGA" />
+                        <CheckBox id="roomPortHDMICheck" fx:id="roomEquipmentCableCheck" layoutX="159.0" layoutY="159.0" mnemonicParsing="false" text="Cable" />
+                        <CheckBox id="roomPortVGACheck" fx:id="roomEquipmentProjectorCheck" layoutX="223.0" layoutY="159.0" mnemonicParsing="false" text="Projector" />
                         <Label layoutX="14.0" layoutY="105.0" text="Number of tables:">
                            <font>
                               <Font size="16.0" />

@@ -42,12 +42,12 @@ public class RoomList
         return count;
     }
 
-    public ArrayList<Room> getAvailableRooms()
+    public ArrayList<Room> getAvailableRooms(int day)
     {
         ArrayList<Room> availableRooms = new ArrayList<>();
         for(int i = 0; i < rooms.size(); i++)
         {
-            if(rooms.get(i).getAvailability())
+            if(rooms.get(i).getAvailability(day))
             {
                 availableRooms.add(rooms.get(i));
             }
@@ -102,5 +102,17 @@ public class RoomList
             x += rooms.get(i) + ", ";
         }
         return x;
+    }
+
+    public int getSize() {
+        return rooms.size();
+    }
+
+    public Room getRoomByIndex(int i) {
+        return rooms.get(i);
+    }
+
+    public void setAll(ArrayList arrayList) {
+        this.rooms=arrayList;
     }
 }
