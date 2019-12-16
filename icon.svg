@@ -23,17 +23,17 @@
        inkscape:collect="always"
        id="linearGradient5764">
       <stop
-         style="stop-color:#ffff00;stop-opacity:1"
+         style="stop-color:#f2f2f2;stop-opacity:1"
          offset="0"
          id="stop5760" />
       <stop
          id="stop5770"
-         offset="0.26358625"
-         style="stop-color:#000000;stop-opacity:1" />
+         offset="0.26645505"
+         style="stop-color:#1a1a1a;stop-opacity:1" />
       <stop
          id="stop5768"
          offset="0.72865838"
-         style="stop-color:#000000;stop-opacity:1" />
+         style="stop-color:#333333;stop-opacity:1" />
       <stop
          style="stop-color:#000080;stop-opacity:1"
          offset="1"
@@ -59,16 +59,18 @@
        y1="63.940971"
        x2="110.64958"
        y2="63.406433"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78165939,0,0,0.78165939,17.33167,7.7168407)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5764"
        id="linearGradient5766"
-       x1="90.337097"
-       y1="43.62849"
-       x2="130.16025"
-       y2="85.055275"
-       gradientUnits="userSpaceOnUse" />
+       x1="82.688286"
+       y1="38.640133"
+       x2="140.46951"
+       y2="92.038971"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.62820407,0,0,0.62820407,33.324545,16.583044)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -104,30 +106,33 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:none;fill-opacity:1;stroke:none;stroke-width:0.08368794;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect12"
-       width="63.075607"
-       height="63.075607"
-       x="79.400536"
-       y="34.028271" />
     <path
-       style="fill:url(#linearGradient5758);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 141.38558,40.688522 -12.02713,-4.009041 -14.43256,7.750815 -8.28535,-9.087165 -18.441597,10.958052 -8.819895,-8.285355 8.018086,26.192413 -5.078122,6.1472 3.474506,25.657874 15.501632,-11.759861 17.10525,10.690782 15.7689,-7.216278 6.94901,8.819896 1.87089,-19.510675 -9.62171,-13.898016 9.88897,-8.285355 -10.42351,-5.61266 z"
+       style="fill:url(#linearGradient5758);fill-opacity:1;stroke:none;stroke-width:0.20681404px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 127.84704,39.521406 -9.40112,-3.133704 -11.28135,6.058497 -6.47632,-7.103068 -14.415048,8.565464 -6.894154,-6.476325 6.267412,20.473545 -3.969362,4.805017 2.715881,20.055718 12.116996,-9.192206 13.370475,8.356551 12.32591,-5.640672 5.43176,6.894155 1.4624,-15.250703 -7.5209,-10.863515 7.72981,-6.476325 -8.14764,-4.387188 z"
        id="path5746"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccc" />
+       sodipodi:nodetypes="cccccccccccccccccc"
+       inkscape:export-filename="D:\Workspace\Exam-Scheduling-System-SEP1\src\icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
-       style="fill:url(#linearGradient5766);fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#linearGradient5766);fill-opacity:1;stroke:#000000;stroke-width:0.06282041;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5750"
-       width="48.91032"
-       height="48.91032"
-       x="87.931671"
-       y="41.49033" />
+       width="30.72566"
+       height="30.72566"
+       x="88.563576"
+       y="42.647438"
+       inkscape:export-filename="D:\Workspace\Exam-Scheduling-System-SEP1\src\icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        aria-label="E"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       id="text5774">
+       id="text5774"
+       inkscape:export-filename="D:\Workspace\Exam-Scheduling-System-SEP1\src\icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="matrix(0.62820407,0,0,0.62820407,33.324545,16.583044)">
       <path
          inkscape:connector-curvature="0"
          d="M 113.3449,52.80403 H 99.516291 v 7.441406 h 12.733069 q 1.4056,0 2.08773,0.640787 0.7028,0.620118 0.7028,1.653646 0,1.033529 -0.68213,1.694987 -0.68213,0.640788 -2.1084,0.640788 H 99.516291 v 8.619628 h 14.304039 q 1.44694,0 2.17041,0.682129 0.74414,0.661459 0.74414,1.77767 0,1.074869 -0.74414,1.756998 -0.72347,0.661459 -2.17041,0.661459 H 97.139175 q -2.005045,0 -2.89388,-0.888835 -0.868164,-0.888835 -0.868164,-2.87321 v -22.77897 q 0,-1.322917 0.392741,-2.14974 0.392741,-0.847493 1.219564,-1.219564 0.847493,-0.39274 2.149739,-0.39274 H 113.3449 q 1.46761,0 2.17041,0.661458 0.72347,0.640788 0.72347,1.694987 0,1.07487 -0.72347,1.736328 -0.7028,0.640788 -2.17041,0.640788 z"
@@ -136,19 +141,22 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.16666603px;line-height:1.25;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';letter-spacing:0px;word-spacing:0px;fill:#ffffce;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="119.73675"
-       y="81.329605"
-       id="text5778"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.29698467px;line-height:1.25;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';letter-spacing:0px;word-spacing:0px;fill:#ffffce;fill-opacity:1;stroke:#ffd42a;stroke-width:0.16621231"
+       x="108.54366"
+       y="67.674637"
+       id="text5778"
+       inkscape:export-filename="D:\Workspace\Exam-Scheduling-System-SEP1\src\icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan5776"
-         x="119.73675"
-         y="81.329605"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.16666603px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';fill:#ffffce;fill-opacity:1;stroke-width:0.26458332">x</tspan><tspan
+         x="108.54366"
+         y="67.674637"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.29698467px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';fill:#ffffce;fill-opacity:1;stroke:#ffd42a;stroke-width:0.16621231">x</tspan><tspan
          sodipodi:role="line"
-         x="119.73675"
-         y="107.78794"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.16666603px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';fill:#ffffce;fill-opacity:1;stroke-width:0.26458332"
+         x="108.54366"
+         y="84.295868"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.29698467px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';fill:#ffffce;fill-opacity:1;stroke:#ffd42a;stroke-width:0.16621231"
          id="tspan5780" /></text>
   </g>
 </svg>
