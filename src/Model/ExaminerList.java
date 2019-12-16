@@ -44,7 +44,7 @@ public class ExaminerList
         ArrayList<Examiner> availableExaminers = new ArrayList<>();
         for (int i = 0; i < examiners.size(); i++)
         {
-            if (examiners.get(i).isAvailable() == true)
+            if (examiners.get(i).isAvailable(i) == true)
             {
                 availableExaminers.add(examiners.get(i));
             }
