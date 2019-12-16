@@ -47,6 +47,10 @@ public class ManageDataController {
     public ComboBox roomChooseComboBox;
     @FXML
     public Button roomRemoveButton;
+    @FXML
+    public TextField examinerPhoneTextField;
+    @FXML
+    public TextField examinerIdTextfield;
 
     @FXML ToggleGroup toggleGroup;
 

@@ -5,14 +5,14 @@ public class Examiner
     private String phoneNumber;
     private String teacherId;
     private boolean[] availability;
-    private String course;
+    private Course course;
 
-    public Examiner(String firstName, String lastName, String phoneNumber, String teacherId, String course)
+    public Examiner(String Name, String phoneNumber, String teacherId, Course course)
     {
-        set(firstName, lastName, phoneNumber, teacherId, course);
+        set(Name, phoneNumber, teacherId, course);
     }
 
-    public void set(String firstName, String lastName, String phoneNumber, String teacherId, String course)
+    public void set(String firstName, String phoneNumber, String teacherId, Course course)
     {
         this.Name = firstName;
         this.phoneNumber = phoneNumber;
@@ -64,12 +64,12 @@ public class Examiner
         this.availability[index] = availability;
     }
 
-    public String getCourse()
+    public Course getCourse()
     {
         return course;
     }
 
-    public void setCourse(String course)
+    public void setCourse(Course course)
     {
         this.course = course;
     }
