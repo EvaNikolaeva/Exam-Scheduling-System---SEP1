@@ -79,7 +79,7 @@ public class Room
 
     public boolean isAvailable(Room room)
     {
-        if(room.getAvailability() == true)
+        if(room.getAvailability())
         {
             return true;
         }

@@ -10,25 +10,21 @@ public class Equipment
     {
         this.hasCables = hasCables;
         this.hasProjector = hasProjector;
-
-        if(numberOfChairs >= 100 || numberOfChairs <= 0)
-        {
-            System.out.println("Try again, wrong chair number input.");
-        }
-
-        if(numberOfChairs <= 100 && numberOfChairs >= 0)
+        try
         {
             this.numberOfChairs = numberOfChairs;
         }
-
-        if(numberOfTables >= 100 || numberOfTables <= 0)
+        catch(NullPointerException e )
         {
-            System.out.println("Try again, wrong table number input.");
+            e.printStackTrace();
         }
-
-        if(numberOfTables <= 100 && numberOfTables >= 0)
+        try
         {
             this.numberOfTables = numberOfTables;
+        }
+        catch(NullPointerException e )
+        {
+            e.printStackTrace();
         }
     }
 
@@ -64,29 +60,12 @@ public class Equipment
 
     public void setNumberOfChairs(int numberOfChairs)
     {
-        if(numberOfChairs >= 100 || numberOfChairs <= 0)
-        {
-            System.out.println("Try again, wrong  chair number input.");
-            //should it be null? if not, should it stay the same but in red??
-        }
 
-        if(numberOfChairs <= 100 && numberOfChairs >= 0)
-        {
-            this.numberOfChairs = numberOfChairs;
-        }
     }
 
     public void setNumberOfTables(int numberOfTables)
     {
-        if(numberOfTables >= 100 || numberOfTables <= 0)
-        {
-            System.out.println("Try again, wrong table number input.");
-        }
 
-        if(numberOfTables <= 100 && numberOfTables >= 0)
-        {
-            this.numberOfTables = numberOfTables;
-        }
     }
 
     public String toString()
