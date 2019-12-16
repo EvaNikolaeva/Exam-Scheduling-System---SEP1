@@ -1,11 +1,12 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class ModelManager implements Model {
+
+
     @Override
     public boolean validateLogin(String username, String password) {
         if (username.equals("admin") && password.equals("admin")) {
@@ -17,6 +18,8 @@ public class ModelManager implements Model {
     @Override
     public void saveRoom(Room room) {
         roomList.addRoom(room);
+        System.out.println(roomList.getRoomByIndex(0));
+        orderRoomList();
 
     }
 
@@ -88,7 +91,7 @@ public class ModelManager implements Model {
 
     @Override
     public ArrayList<Room> getDisplayableRoomList() {
-        if (roomList!=null) {
+        if (roomList.getSize()!=0) {
             ArrayList<Room> a = new ArrayList();
             for (int i = 0; roomList.getSize() < i; i++) {
                 a.add(roomList.getRoomByIndex(i));

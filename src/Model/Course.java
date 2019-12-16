@@ -31,12 +31,12 @@ public class Course
                 illegal = false;
                 break;
             }
-            if (illegal) {
-                throw new IllegalArgumentException("Illegal argument for course!!!!");
+        }
+        if (illegal) {
+            throw new IllegalArgumentException("Illegal argument for course!!!!");
 
-            } else {
-                System.out.println("success");
-            }
+        } else {
+            System.out.println("success");
         }
     }
 
@@ -71,12 +71,13 @@ public class Course
                 illegal = false;
                 break;
             }
-            if (illegal) {
-                throw new IllegalArgumentException("Illegal argument for course!!!!");
 
-            } else {
-                System.out.println("Valid course details added!!");
-            }
+        }
+        if (illegal) {
+            throw new IllegalArgumentException("Illegal argument for course!!!!");
+
+        } else {
+            System.out.println("Valid course details added!!");
         }
 
         this.type = type;

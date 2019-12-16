@@ -108,9 +108,17 @@ public class ManageDataController {
     //-------ROOM TAB---------------------------------------
 
     public void onRoomSaveButtonPressed(ActionEvent actionEvent) {
-        Equipment equipment = new Equipment(roomEquipmentCableCheck.isSelected(),roomEquipmentProjectorCheck.isSelected(),Integer.parseInt(roomNumberOfChairsTextField.getText()),Integer.parseInt(roomNumberOfTablesTextField.getText()));
-        Room room   = new Room(equipment,roomNumbertextField.getText());
-        model.saveRoom(room);
+        try {
+            Equipment equipment = new Equipment(roomEquipmentCableCheck.isSelected(), roomEquipmentProjectorCheck.isSelected(), Integer.parseInt(roomNumberOfChairsTextField.getText()), Integer.parseInt(roomNumberOfTablesTextField.getText()));
+            Room room = new Room(equipment, roomNumbertextField.getText());
+            model.saveRoom(room);
+            System.out.println(model.getDisplayableRoomList().size());
+            roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
+        }catch (Exception e){
+            e.getMessage();
+        }
+
+
 
 
     }
@@ -134,11 +142,13 @@ public class ManageDataController {
         semesters.add(1);semesters.add(2); semesters.add(3);
         courseSemesterComboBox.getItems().addAll(semesters);
         courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
+        roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
 
     }
 
     public void reset() {
         courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
+        roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
 
 
     }

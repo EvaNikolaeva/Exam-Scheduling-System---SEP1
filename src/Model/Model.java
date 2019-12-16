@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public interface Model {
     //todo: add model instance variables.
-    CourseList courseList = null;
-    ExaminerList examinerList = null;
-    RoomList roomList = null;
-    ExamList examList = null;
+    CourseList courseList = new CourseList();
+    ExaminerList examinerList = new ExaminerList();
+    RoomList roomList = new RoomList();
+    ExamList examList = new ExamList();
 
     public boolean validateLogin(String username, String password);
 
