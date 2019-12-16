@@ -15,7 +15,7 @@ public class Main
         Equipment eq = new Equipment(true ,true, 10, 10);
         Room room = new Room(eq, "A201", true);
         Course course = new Course("RWD1X", "Written", 35);
-        Examiner line = new Examiner("Line", "Egsgaard", "0987", "1234", true, "RWD");
+        Examiner line = new Examiner("Line Egsgaard", "23569641", "1234",  "RWD");
         Exam rwd = new Exam(date, course, room, line);
 
         ArrayList<Exam> one = new ArrayList<>();

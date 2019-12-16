@@ -1,20 +1,20 @@
 package Model;
 public class Examiner
 {
-    private String Name;
+    private String name;
     private String phoneNumber;
     private String teacherId;
     private boolean[] availability;
     private String course;
 
-    public Examiner(String firstName, String lastName, String phoneNumber, String teacherId, String course)
+    public Examiner(String name, String phoneNumber, String teacherId, String course)
     {
-        set(firstName, lastName, phoneNumber, teacherId, course);
+        set(name, phoneNumber, teacherId, course);
     }
 
-    public void set(String firstName, String lastName, String phoneNumber, String teacherId, String course)
+    public void set(String name, String phoneNumber, String teacherId, String course)
     {
-        this.Name = firstName;
+        this.name = name;
         this.phoneNumber = phoneNumber;
         this.teacherId = teacherId;
         for (int i=0; i<31;i++) {
@@ -24,14 +24,14 @@ public class Examiner
 
     }
 
-    public String getFirstName()
+    public String getName()
     {
-        return Name;
+        return name;
     }
 
-    public void setFirstName(String firstName)
+    public void setName(String firstName)
     {
-        this.Name = firstName;
+        this.name = name;
     }
 
     public String getPhoneNumber()
@@ -77,7 +77,7 @@ public class Examiner
     public String toString()
     {
         String s = "";
-        s += "Examiner name: " + Name + ", phone number: " + phoneNumber + ", id: " + teacherId +
+        s += "Examiner name: " + name + ", phone number: " + phoneNumber + ", id: " + teacherId +
                 ", course: " + course + ", is available: " + availability;
         return s;
     }
@@ -89,7 +89,7 @@ public class Examiner
              return false;
          }
          Examiner other = (Examiner)obj;
-         return Name.equals(other.Name) && phoneNumber.equals(other.phoneNumber)
+         return name.equals(other.name) && phoneNumber.equals(other.phoneNumber)
                  && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course);
     }
 }
