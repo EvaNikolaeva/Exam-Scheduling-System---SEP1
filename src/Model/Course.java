@@ -20,19 +20,21 @@ public class Course
 
     public void setName(String name)
     {
-        try
+        boolean illegal = true;
+
+        for (int i = 0; i < LEGAL_COURSES.length; i++)
         {
-            for (int i = 0; i < LEGAL_COURSES.length; i++)
-            {
-                if (name.equals(LEGAL_COURSES[i]))
-                {
-                    this.name = name;
-                }
+            if (name.equals(LEGAL_COURSES[i])) {
+                this.name = name;
+                illegal = false;
+                break;
             }
-        }
-        catch (IllegalArgumentException e)
-        {
-            e.printStackTrace();
+            if (illegal) {
+                throw new IllegalArgumentException("Illegal argument for course!!!!");
+
+            } else {
+                System.out.println("success");
+            }
         }
     }
 
@@ -56,21 +58,23 @@ public class Course
         this.numberOfStudents = numberOfStudents;
     }
 
-    public void setCourse(String name, String type, int numberOfStudents)
+    public void setCourse(String name, String type, int numberOfStudents) throws IllegalArgumentException
     {
-        try
+        boolean illegal = true;
+
+        for (int i = 0; i < LEGAL_COURSES.length; i++)
         {
-            for (int i = 0; i < LEGAL_COURSES.length; i++)
-            {
-                if (name.equals(LEGAL_COURSES[i]))
-                {
-                    this.name = name;
-                }
+            if (name.equals(LEGAL_COURSES[i])) {
+                this.name = name;
+                illegal = false;
+                break;
             }
-        }
-        catch (NullPointerException e)
-        {
-            e.printStackTrace();
+            if (illegal) {
+                throw new IllegalArgumentException("Illegal argument for course!!!!");
+
+            } else {
+                System.out.println("success");
+            }
         }
 
         this.type = type;
