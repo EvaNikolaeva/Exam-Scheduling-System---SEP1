@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import Model.Course;
 
 public class ManageDataController {
     @FXML
@@ -59,29 +60,41 @@ public class ManageDataController {
     private Model model;
 
 
-    public void onCourseSaveButtonPressed(ActionEvent actionEvent) {
-    }
 
+    //----------ExaminerTab
     public void onExaminerComboBoxSelected(ActionEvent actionEvent) {
+
     }
 
     public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) {
+
+    }
+    //-----------COURSE TAB-----------------------------------------
+    public void onCourseSaveButtonPressed(ActionEvent actionEvent) {
+
     }
 
     public void onCourseRemoveButtonPressed(ActionEvent actionEvent) {
+
     }
 
     public void onCourseChooseComboboxSelected(ActionEvent actionEvent) {
+
     }
+    //-------ROOM TAB---------------------------------------
 
     public void onRoomSaveButtonPressed(ActionEvent actionEvent) {
+
     }
 
-    public void onRoomChooseComboBoxSelexted(ActionEvent actionEvent) {
+    public void onRoomChooseComboBoxSelected(ActionEvent actionEvent) {
+
     }
 
     public void onRoomRemoveButtonPressed(ActionEvent actionEvent) {
+
     }
+    //-----------------------------------------------------------------
 
     public void init(ViewHandler viewHandler, Model model, Region root) {
         this.root = root;
@@ -91,8 +104,11 @@ public class ManageDataController {
         courseTypeOralRadioButton.setToggleGroup(toggleGroup);
 
     }
-
+    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
+        model.saveExaminer(examinerNameTextField.getText(),examinerPhoneTextField.getText(),examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
+    }
     public void reset() {
+
 
     }
 
@@ -103,5 +119,9 @@ public class ManageDataController {
     public void onGoBackButton(ActionEvent actionEvent) {
         viewHandler.closeView();
         viewHandler.openView(viewHandler.MAIN_ID);
+    }
+
+
+    public onExaminerSaveButtonPressed (ActionEvent actionEvent) {
     }
 }

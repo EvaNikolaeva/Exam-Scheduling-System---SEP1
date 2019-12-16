@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ManageDataController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ManageDataController">
    <children>
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -26,7 +18,7 @@
                            </font>
                         </Label>
                         <TextField id="ExaminerNameTextfield" fx:id="examinerNameTextField" layoutX="87.0" layoutY="41.0" />
-                        <Button id="ExaminerSaveButton" fx:id="examinerSaveButton" layoutX="487.0" layoutY="325.0" mnemonicParsing="false" onAction="#onCourseSaveButtonPressed" text="Save Examiner" />
+                        <Button id="ExaminerSaveButton" fx:id="examinerSaveButton" layoutX="487.0" layoutY="325.0" mnemonicParsing="false" onAction="#onExaminerSaveButtonPressed" text="Save Examiner" />
                         <ComboBox id="ExaminerCombobox" fx:id="examinerChooseCombobox" layoutX="271.0" layoutY="41.0" onAction="#onExaminerComboBoxSelected" prefWidth="150.0" promptText="Choose examiner." />
                         <Label layoutX="11.0" layoutY="192.0" text="Course:">
                            <font>
@@ -108,7 +100,7 @@
                            </font>
                         </Label>
                         <TextField id="roomNumberOfTablesTextField" fx:id="roomNumberOfTablesTextField" layoutX="148.0" layoutY="105.0" />
-                        <ComboBox id="roomComboBox" fx:id="roomChooseComboBox" layoutX="318.0" layoutY="26.0" onAction="#onRoomChooseComboBoxSelexted" prefHeight="25.0" prefWidth="171.0" promptText="Choose a room." />
+                        <ComboBox id="roomComboBox" fx:id="roomChooseComboBox" layoutX="318.0" layoutY="26.0" onAction="#onRoomChooseComboBoxSelected" prefHeight="25.0" prefWidth="171.0" promptText="Choose a room." />
                         <Button id="roomRemoveButton" fx:id="roomRemoveButton" layoutX="433.0" layoutY="313.0" mnemonicParsing="false" onAction="#onRoomRemoveButtonPressed" text="Remove" />
                         <Button layoutX="18.0" layoutY="326.0" mnemonicParsing="false" onAction="#onGoBackButton" text="Go back" />
                      </children>
