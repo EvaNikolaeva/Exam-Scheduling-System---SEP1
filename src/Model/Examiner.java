@@ -1,37 +1,46 @@
 package Model;
 public class Examiner
 {
-    private String Name;
+    private String firstName;
+    private String lastName;
     private String phoneNumber;
     private String teacherId;
-    private boolean[] availability;
-    private Course course;
+    private boolean availability;
+    private String course;
 
-    public Examiner(String Name, String phoneNumber, String teacherId, Course course)
+    public Examiner(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course)
     {
-        set(Name, phoneNumber, teacherId, course);
+        set(firstName, lastName, phoneNumber, teacherId, availability, course);
     }
 
-    public void set(String firstName, String phoneNumber, String teacherId, Course course)
+    public void set(String firstName, String lastName, String phoneNumber, String teacherId, boolean availability, String course)
     {
-        this.Name = firstName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.teacherId = teacherId;
-        for (int i=0; i<31;i++) {
-            this.availability[i] = true;
-        }
+        this.availability = availability;
         this.course = course;
-
     }
 
     public String getFirstName()
     {
-        return Name;
+        return firstName;
     }
 
     public void setFirstName(String firstName)
     {
-        this.Name = firstName;
+        this.firstName = firstName;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
+    }
+
+    public void setLastName(String lastName)
+    {
+        this.lastName = lastName;
     }
 
     public String getPhoneNumber()
@@ -54,22 +63,22 @@ public class Examiner
         this.teacherId = teacherId;
     }
 
-    public boolean isAvailable(int index)
+    public boolean isAvailable()
     {
-        return availability[index];
+        return availability;
     }
 
-    public void setAvailability(boolean availability,int index)
+    public void setAvailability(boolean availability)
     {
-        this.availability[index] = availability;
+        this.availability = availability;
     }
 
-    public Course getCourse()
+    public String getCourse()
     {
         return course;
     }
 
-    public void setCourse(Course course)
+    public void setCourse(String course)
     {
         this.course = course;
     }
@@ -77,7 +86,7 @@ public class Examiner
     public String toString()
     {
         String s = "";
-        s += "Examiner name: " + Name + ", phone number: " + phoneNumber + ", id: " + teacherId +
+        s += "Examiner name: " + firstName + " " + lastName + ", phone number: " + phoneNumber + ", id: " + teacherId +
                 ", course: " + course + ", is available: " + availability;
         return s;
     }
@@ -89,7 +98,7 @@ public class Examiner
              return false;
          }
          Examiner other = (Examiner)obj;
-         return Name.equals(other.Name) && phoneNumber.equals(other.phoneNumber)
+         return firstName.equals(other.firstName) && lastName.equals(other.lastName) && phoneNumber.equals(other.phoneNumber)
                  && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course);
     }
 }
