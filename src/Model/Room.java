@@ -14,20 +14,21 @@ public class Room
     {
         this.equipment = equipment;
 
-            try
-            {
-                for(int i = 0; i < ROOM_LIST.length; i++)
-                {
-                    if(room.equals(ROOM_LIST[i]))
-                    {
-                        this.room = room;
-                    }
-                }
+        boolean illegal = true;
+        for (int i = 0; i < ROOM_LIST.length; i++)
+        {
+            if (room.equals(ROOM_LIST[i])) {
+                this.room = room;
+                illegal = false;
+                break;
             }
-            catch (NullPointerException e)
-            {
-            e.printStackTrace();
+            if (illegal) {
+                throw new IllegalArgumentException("Illegal argument for Room!!!!");
+
+            } else {
+                System.out.println("success");
             }
+        }
 
         this.availability = availability;
     }
@@ -54,7 +55,21 @@ public class Room
 
     public void setRoom(String room)
     {
-        this.room = room;
+        boolean illegal = true;
+        for (int i = 0; i < ROOM_LIST.length; i++)
+        {
+            if (room.equals(ROOM_LIST[i])) {
+                this.room = room;
+                illegal = false;
+                break;
+            }
+            if (illegal) {
+                throw new IllegalArgumentException("Illegal argument for room!!!!");
+
+            } else {
+                System.out.println("success");
+            }
+        }
     }
 
     public void setAvailability(boolean availability)

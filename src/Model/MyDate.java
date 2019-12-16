@@ -39,17 +39,21 @@ public class MyDate
 
     public void setMonth(int month)
     {
-       try
-       {
-           if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
-           {
-               this.month = month;
-           }
-       }
-       catch (IllegalArgumentException e)
-       {
-           e.printStackTrace();
-       }
+        boolean illegal = true;
+
+        if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
+        {
+            this.month = month;
+            illegal = false;
+        }
+        if (illegal)
+        {
+            throw new IllegalArgumentException("Illegal argument for month!!!!");
+
+        } else
+        {
+            System.out.println("success");
+        }
     }
 
     public int getYear()
@@ -62,20 +66,24 @@ public class MyDate
         this.year = year;
     }
 
-    public void setDate(int day, int month, int year)
+    public void setDate(int day, int month, int year) throws IllegalArgumentException
     {
         this.day = day;
 
-        try
+        boolean illegal = true;
+
+        if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
         {
-            if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
-            {
-                this.month = month;
-            }
+            this.month = month;
+            illegal = false;
         }
-        catch (IllegalArgumentException e)
+        if (illegal)
         {
-            e.printStackTrace();
+            throw new IllegalArgumentException("Illegal argument for month!!!!");
+
+        } else
+        {
+            System.out.println("success");
         }
 
         this.year = year;
