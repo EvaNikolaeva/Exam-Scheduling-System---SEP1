@@ -39,10 +39,17 @@ public class MyDate
 
     public void setMonth(int month)
     {
-        if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
-        {
-            this.month = month;
-        }
+       try
+       {
+           if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
+           {
+               this.month = month;
+           }
+       }
+       catch (IllegalArgumentException e)
+       {
+           e.printStackTrace();
+       }
     }
 
     public int getYear()
@@ -58,10 +65,19 @@ public class MyDate
     public void setDate(int day, int month, int year)
     {
         this.day = day;
-        if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
+
+        try
         {
-            this.month = month;
+            if (getMonthName(month).equals(LEGAL_MONTH[0]) || getMonthName(month).equals(LEGAL_MONTH[1]))
+            {
+                this.month = month;
+            }
         }
+        catch (IllegalArgumentException e)
+        {
+            e.printStackTrace();
+        }
+
         this.year = year;
     }
 
@@ -82,6 +98,27 @@ public class MyDate
             case 11: return "November";
             default: return "December";
         }
+    }
+
+    public boolean isBefore(MyDate other)
+    {
+        if (this.year < other.year)
+        {
+            return true;
+        }
+        else if (this.year > other.year)
+        {
+            return false;
+        }
+        if (this.month < other.month)
+        {
+            return true;
+        }
+        else if (this.month > other.month)
+        {
+            return false;
+        }
+        return this.day < other.day;
     }
 
     public String toString()
