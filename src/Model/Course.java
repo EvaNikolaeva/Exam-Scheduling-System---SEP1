@@ -87,4 +87,14 @@ public class Course
         s += "Course: " + name + ", type: " + type + ", students attending: " + numberOfStudents;
         return s;
     }
+
+    public boolean equals(Object obj)
+    {
+        if (!(obj instanceof Course))
+        {
+            return false;
+        }
+        Course other = (Course)obj;
+        return name.equals(other.name) && type.equals(other.type) && numberOfStudents == other.numberOfStudents;
+    }
 }
