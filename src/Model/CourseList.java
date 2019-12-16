@@ -26,6 +26,10 @@ public class CourseList
         return courses.get(index);
     }
 
+    public int getSize(){
+        return courses
+    }
+
     public String toString()
     {
         String s = "";

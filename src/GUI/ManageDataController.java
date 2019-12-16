@@ -52,6 +52,8 @@ public class ManageDataController {
     public TextField examinerPhoneTextField;
     @FXML
     public TextField examinerIdTextfield;
+    public RadioButton examinerRadioButtonInternal;
+    public RadioButton examinerRadioButtonExtarnal;
 
     @FXML ToggleGroup toggleGroup;
 
@@ -68,6 +70,9 @@ public class ManageDataController {
 
     public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) {
 
+    }
+    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
+        model.saveExaminer(examinerNameTextField.getText(),examinerPhoneTextField.getText(),examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
     }
     //-----------COURSE TAB-----------------------------------------
     public void onCourseSaveButtonPressed(ActionEvent actionEvent) {
@@ -104,9 +109,7 @@ public class ManageDataController {
         courseTypeOralRadioButton.setToggleGroup(toggleGroup);
 
     }
-    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
-        model.saveExaminer(examinerNameTextField.getText(),examinerPhoneTextField.getText(),examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
-    }
+
     public void reset() {
 
 
@@ -121,7 +124,4 @@ public class ManageDataController {
         viewHandler.openView(viewHandler.MAIN_ID);
     }
 
-
-    public onExaminerSaveButtonPressed (ActionEvent actionEvent) {
-    }
 }
