@@ -60,6 +60,16 @@ public class Course
         this.numberOfStudents = numberOfStudents;
     }
 
+    public int getSemester()
+    {
+        return semester;
+    }
+
+    public void setSemester(int semester)
+    {
+        this.semester = semester;
+    }
+
     public void setCourse(String name, String type, int numberOfStudents) throws IllegalArgumentException
     {
         boolean illegal = true;
@@ -98,6 +108,7 @@ public class Course
             return false;
         }
         Course other = (Course)obj;
-        return name.equals(other.name) && type.equals(other.type) && numberOfStudents == other.numberOfStudents;
+        return name.equals(other.name) && type.equals(other.type) && numberOfStudents == other.numberOfStudents
+                && semester == other.semester;
     }
 }

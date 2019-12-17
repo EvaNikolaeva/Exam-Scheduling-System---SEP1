@@ -7,11 +7,11 @@ public class Examiner {
     private Course course;
     private boolean external;
 
-    public Examiner(String name, String phoneNumber, String teacherId, Course course) {
-        set(name, phoneNumber, teacherId, course);
+    public Examiner(String name, String phoneNumber, String teacherId, Course course, boolean external) {
+        set(name, phoneNumber, teacherId, course, external);
     }
 
-    public void set(String name, String phoneNumber, String teacherId, Course course) {
+    public void set(String name, String phoneNumber, String teacherId, Course course, boolean external) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.teacherId = teacherId;
@@ -27,7 +27,7 @@ public class Examiner {
         return name;
     }
 
-    public void setName(String firstName)
+    public void setName(String name)
     {
         this.name = name;
     }
@@ -80,7 +80,8 @@ public class Examiner {
          }
          Examiner other = (Examiner)obj;
          return name.equals(other.name) && phoneNumber.equals(other.phoneNumber)
-                 && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course);
+                 && teacherId.equals(other.teacherId) && availability == other.availability && course.equals(other.course)
+                 && external == other.external;
     }
 
     public boolean isExternal() {

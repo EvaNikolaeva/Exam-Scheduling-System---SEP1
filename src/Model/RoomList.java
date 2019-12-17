@@ -32,16 +32,6 @@ public class RoomList
         return null;
     }
 
-    public int getNumberOfRooms()
-    {
-        int count = 0;
-        for(int i = 0; i < rooms.size(); i++)
-        {
-            count++;
-        }
-        return count;
-    }
-
     public ArrayList<Room> getAvailableRooms(int day)
     {
         ArrayList<Room> availableRooms = new ArrayList<>();

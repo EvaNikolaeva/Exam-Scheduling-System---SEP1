@@ -21,11 +21,6 @@ public class ExaminerList
         examiners.remove(examiner);
     }
 
-    public int getNumbersOfExaminer()
-    {
-        return examiners.size();
-    }
-
     public ArrayList<Examiner> getExaminersByCourse(String course)
     {
         ArrayList<Examiner> examinersByCourse = new ArrayList<>();
