@@ -1,4 +1,4 @@
-package Adapters;
+package Mediator;
 
 import Model.*;
 

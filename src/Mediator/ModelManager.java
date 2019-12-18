@@ -1,6 +1,4 @@
-package Model;
-
-import Adapters.NotepadAdapterClass;
+package Mediator;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -8,9 +6,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import Model.*;
+
 public class ModelManager implements Model {
 
     private NotepadAdapterClass note = new NotepadAdapterClass();
+    private Backup backup = new Backup();
 
 
     @Override
@@ -50,6 +51,7 @@ public class ModelManager implements Model {
     {
         examList.removeExam(exam);
         note.saveExamList(examList);
+        backup.saveExamList(examList);
     }
 
     @Override
@@ -57,6 +59,7 @@ public class ModelManager implements Model {
     {
         examList.addExam(exam);
         note.saveExamList(examList);
+        backup.saveExamList(examList);
     }
 
     //---------------Examiner-----------------------------------------------

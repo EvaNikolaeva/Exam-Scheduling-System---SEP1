@@ -1,17 +1,16 @@
-package Adapters;
+package Mediator;
 
-import Model.Exam;
+import Model.ExamList;
 import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Backup
 {
-    public void saveExamList(ArrayList<Exam> toSave) throws FileNotFoundException
+    public void saveExamList(ExamList toSave) throws FileNotFoundException
     {
         Gson gson = new Gson();
         String filename = "backup.txt";
@@ -29,7 +28,7 @@ public class Backup
         System.out.println("End writing data to file: " + file.getAbsolutePath());
     }
 
-    public ArrayList<Exam> loadExamList()
+    public ExamList loadExamList()
     {
         Gson gson = new Gson();
         String nameOfFile = "backup.txt";
@@ -50,7 +49,7 @@ public class Backup
         }
         in.close();
 
-        ArrayList<Exam> newExam = gson.fromJson(line,ArrayList.class);
+        ExamList newExam = gson.fromJson(line,ExamList.class);
         System.out.println(newExam.toString());
 
         return newExam;

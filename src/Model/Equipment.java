@@ -60,12 +60,26 @@ public class Equipment
 
     public void setNumberOfChairs(int numberOfChairs)
     {
-
+        try
+        {
+            this.numberOfChairs = numberOfChairs;
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void setNumberOfTables(int numberOfTables)
     {
-
+        try
+        {
+            this.numberOfTables = numberOfTables;
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public String toString()
