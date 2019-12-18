@@ -1,7 +1,10 @@
 package Model;
 
 /**
- * The type Course.
+ * A class representing a course.
+ *
+ * @author Group 8
+ * @version 1 - December 2019
  */
 public class Course
 {
@@ -16,11 +19,11 @@ public class Course
             "MSE1Z", "SEP1X", "SEP1Y", "SEP1Z", "SDJ2", "SDJ3X", "SDJ3Y", "SEP2", "NES1X", "NES1Y", "DNP1X", "DNP1Y", "DBS1"};
 
     /**
-     * Instantiates a new Course.
+     * Four-argument constructor instantiating a new Course.
      *
-     * @param name             the name
-     * @param type             the type
-     * @param numberOfStudents the number of students
+     * @param name             the name of the course
+     * @param type             the type of the exam
+     * @param numberOfStudents the number of students taking the course
      * @param semester         the semester
      */
     public Course(String name, String type, int numberOfStudents, int semester)
@@ -30,9 +33,9 @@ public class Course
     }
 
     /**
-     * Gets name.
+     * Getter for name.
      *
-     * @return the name
+     * @return the name of the course
      */
     public String getName()
     {
@@ -40,9 +43,9 @@ public class Course
     }
 
     /**
-     * Sets name.
+     * Sets the name of the course if it is a legal one.
      *
-     * @param name the name
+     * @param name the name of the course
      */
     public void setName(String name)
     {
@@ -65,9 +68,9 @@ public class Course
     }
 
     /**
-     * Gets type.
+     * Getter for type.
      *
-     * @return the type
+     * @return the type of the exam
      */
     public String getType()
     {
@@ -75,9 +78,9 @@ public class Course
     }
 
     /**
-     * Sets type.
+     * Sets the type.
      *
-     * @param type the type
+     * @param type the type of the exam
      */
     public void setType(String type)
     {
@@ -85,9 +88,9 @@ public class Course
     }
 
     /**
-     * Gets number of students.
+     * Getter for number of students.
      *
-     * @return the number of students
+     * @return the number of students taking the course
      */
     public int getNumberOfStudents()
     {
@@ -95,9 +98,9 @@ public class Course
     }
 
     /**
-     * Sets number of students.
+     * Setter for number of students.
      *
-     * @param numberOfStudents the number of students
+     * @param numberOfStudents the number of students taking the course
      */
     public void setNumberOfStudents(int numberOfStudents)
     {
@@ -105,7 +108,7 @@ public class Course
     }
 
     /**
-     * Gets semester.
+     * Getter for semester.
      *
      * @return the semester
      */
@@ -115,7 +118,7 @@ public class Course
     }
 
     /**
-     * Sets semester.
+     * Setter for semester.
      *
      * @param semester the semester
      */
@@ -125,11 +128,11 @@ public class Course
     }
 
     /**
-     * Sets course.
+     * Sets the course and checks if the name is legal.
      *
-     * @param name             the name
-     * @param type             the type
-     * @param numberOfStudents the number of students
+     * @param name             the name of the course
+     * @param type             the type of the exam
+     * @param numberOfStudents the number of students taking the course
      * @throws IllegalArgumentException the illegal argument exception
      */
     public void setCourse(String name, String type, int numberOfStudents) throws IllegalArgumentException
@@ -156,6 +159,10 @@ public class Course
         this.numberOfStudents = numberOfStudents;
     }
 
+    /**
+     * Returning information about a course.
+     * @return a string with information about a course
+     */
     public String toString()
     {
         String s = "";
@@ -163,6 +170,11 @@ public class Course
         return s;
     }
 
+    /**
+     * Returning if two courses are the same.
+     * @param obj the course compared to
+     * @return true if the courses are identical. Otherwise return false.
+     */
     public boolean equals(Object obj)
     {
         if (!(obj instanceof Course))

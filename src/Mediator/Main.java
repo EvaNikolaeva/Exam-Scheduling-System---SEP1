@@ -16,7 +16,7 @@ public class Main
         Room room = new Room(eq, "A201");
         Course course = new Course("RWD1X", "Written", 35, 1);
         Examiner line = new Examiner("Line Egsgaard", "23569641", "1234",  course,true);
-        Exam rwd = new Exam(date, course, room, line);
+        Exam rwd = new Exam(date, course, room, line, null);
 
         ArrayList<Exam> one = new ArrayList<>();
         one.add(rwd);
