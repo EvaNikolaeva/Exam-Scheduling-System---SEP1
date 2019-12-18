@@ -24,6 +24,7 @@ public interface Model {
     public ArrayList<Course> getDisplayableCourseList(); //just name.
     public ArrayList<Examiner> getDisplayableExaminerList();// just name and id.
     public ArrayList<Room> getDisplayableRoomList();//just name.
+    public ArrayList<Exam> getDisplayableExamList();
 
     public void orderCourseList(); //by name
     public void orderExaminerList(); //by Id

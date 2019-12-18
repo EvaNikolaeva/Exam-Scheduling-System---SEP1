@@ -2,11 +2,13 @@ package GUI;
 
 import Model.Model;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Region;
 
 public class RemoveController {
-    public ComboBox deleteExamCombobox;
+    @FXML
+    private ComboBox deleteExamCombobox;
     private ViewHandler viewHandler;
     private Region root;
     private Model model;

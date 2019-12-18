@@ -4,75 +4,81 @@ import Model.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import Model.Course;
 import Model.Examiner;
 import Model.Equipment;
 import Model.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class ManageDataController {
     @FXML
-    public TextField examinerNameTextField;
+    private TextField examinerNameTextField;
     @FXML
-    public Button examinerSaveButton;
+    private Button examinerSaveButton;
     @FXML
-    public ComboBox examinerChooseCombobox;
+    private ComboBox examinerChooseCombobox;
     @FXML
-    public Button examinerDeleteButton;
+    private Button examinerDeleteButton;
     @FXML
-    public ComboBox examinerCourseComboBox;
+    private ComboBox examinerCourseComboBox;
 
     @FXML
-    public TextField examinerPhoneTextField;
+    private TextField examinerPhoneTextField;
 
     @FXML
-    public TextField courseNameTextField;
+    private TextField courseNameTextField;
     @FXML
-    public TextField courseNumberOfStudents;
+    private TextField courseNumberOfStudents;
     @FXML
-    public RadioButton courseTypeWrittenRadioButton;
+    private RadioButton courseTypeWrittenRadioButton;
     @FXML
-    public RadioButton courseTypeOralRadioButton;
+    private RadioButton courseTypeOralRadioButton;
     @FXML
-    public Button courseSaveButton;
+    private Button courseSaveButton;
     @FXML
-    public Button courseRemoveButton;
+    private Button courseRemoveButton;
     @FXML
-    public ComboBox courseChooseComboBox;
+    private ComboBox courseChooseComboBox;
 
     @FXML
-    public TextField roomNumbertextField;
+    private TextField roomNumbertextField;
     @FXML
-    public TextField roomNumberOfChairsTextField;
+    private TextField roomNumberOfChairsTextField;
     @FXML
-    public Button roomSaveButton;
+    private Button roomSaveButton;
     @FXML
-    public TextField roomNumberOfTablesTextField;
+    private TextField roomNumberOfTablesTextField;
     @FXML
-    public ComboBox roomChooseComboBox;
+    private ComboBox roomChooseComboBox;
     @FXML
-    public Button roomRemoveButton;
+    private Button roomRemoveButton;
 
 
     @FXML
-    public TextField examinerIdTextfield;
+    private TextField examinerIdTextfield;
     @FXML
-    public RadioButton examinerRadioButtonInternal;
+    private RadioButton examinerRadioButtonInternal;
     @FXML
-    public RadioButton examinerRadioButtonExtarnal;
+    private RadioButton examinerRadioButtonExternal;
     @FXML
-    public ComboBox courseSemesterComboBox;
-    public CheckBox roomEquipmentCableCheck;
-    public CheckBox roomEquipmentProjectorCheck;
+    private ComboBox courseSemesterComboBox;
+    @FXML
+    private CheckBox roomEquipmentCableCheck;
+    @FXML
+    private CheckBox roomEquipmentProjectorCheck;
 
-    @FXML ToggleGroup toggleGroup;
+    @FXML
+    private ToggleGroup toggleGroup;
 
     private ViewHandler viewHandler;
     private Region root;
     private Model model;
-
+    private static final List VALIDESEMESTERS= new List();
 
 
     //----------ExaminerTab
@@ -81,19 +87,21 @@ public class ManageDataController {
     }
 
     public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) {
-        Examiner examiner= (Examiner) examinerCourseComboBox.getValue();
+        Examiner examiner = (Examiner) examinerCourseComboBox.getValue();
         model.deleteExaminer(examiner);
 
     }
+
     public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
-        Examiner examiner= new Examiner(examinerNameTextField.getText(),examinerPhoneTextField.getText(),examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
+        Examiner examiner = new Examiner(examinerNameTextField.getText(), examinerPhoneTextField.getText(), examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
         model.saveExaminer(examiner);
     }
+
     //-----------COURSE TAB-----------------------------------------
     public void onCourseSaveButtonPressed(ActionEvent actionEvent) {
-        String type= toggleGroup.getSelectedToggle().toString();
-        System.out.println("."+courseNameTextField.getText()+".");
-        Course course= new Course(courseNameTextField.getText(),type,Integer.parseInt(courseNumberOfStudents.getText()),Integer.parseInt(courseSemesterComboBox.getValue().toString()));
+        String type = toggleGroup.getSelectedToggle().toString();
+        System.out.println("." + courseNameTextField.getText() + ".");
+        Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()), Integer.parseInt(courseSemesterComboBox.getValue().toString()));
         model.saveCourse(course);
 
     }
@@ -114,11 +122,9 @@ public class ManageDataController {
             model.saveRoom(room);
             System.out.println(model.getDisplayableRoomList().size());
             roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
-
-
 
 
     }
@@ -138,8 +144,11 @@ public class ManageDataController {
         this.model = model;
         courseTypeWrittenRadioButton.setToggleGroup(toggleGroup);
         courseTypeOralRadioButton.setToggleGroup(toggleGroup);
-        ArrayList<Integer> semesters= new ArrayList<>();
-        semesters.add(1);semesters.add(2); semesters.add(3);
+        ArrayList<Integer> semesters = new ArrayList<>();
+        semesters.add(1);
+        semesters.add(2);
+        semesters.add(3);
+        semesters.add(4);
         courseSemesterComboBox.getItems().addAll(semesters);
         courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
         roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
@@ -149,6 +158,7 @@ public class ManageDataController {
     public void reset() {
         courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
         roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
+        examinerChooseCombobox.getItems().addAll(model.getDisplayableExaminerList());
 
 
     }

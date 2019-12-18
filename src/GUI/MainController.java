@@ -22,17 +22,17 @@ public class MainController{
     private Model model;
 
     @FXML
-    Button addExamBtn;
+    private Button addExamBtn;
     @FXML
-    Button removeExamBtn;
+    private Button removeExamBtn;
     @FXML
-    Button editExamBtn;
+    private Button editExamBtn;
     @FXML
-    Button exportBtn;
+    private Button exportBtn;
     @FXML
-    Button manageDataBtn;
+    private  Button manageDataBtn;
     @FXML
-    TableView tableView;
+    private  TableView tableView;
 
 
     public void onAddExamBtn(ActionEvent actionEvent) {
