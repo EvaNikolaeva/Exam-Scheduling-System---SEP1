@@ -84,7 +84,7 @@ public class ManageDataController {
 
     //----------ExaminerTab------------------------------------------------
     public void onExaminerComboBoxSelected(ActionEvent actionEvent) {
-    
+
     }
 
     public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) throws FileNotFoundException

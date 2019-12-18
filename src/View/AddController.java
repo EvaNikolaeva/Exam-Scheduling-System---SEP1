@@ -48,6 +48,9 @@ public class AddController {
 
     public void reset() {
         ExamPicker.getItems().clear();
+        Examiner1Picker.getItems().clear();
+        Examiner2Picker.getItems().clear();
+        roomCombobox.getItems().clear();
         ExamPicker.getItems().addAll(model.getDisplayableCourseList());
         Examiner1Picker.getItems().addAll(model.getDisplayableExaminerList());
         Examiner2Picker.getItems().addAll(model.getDisplayableExaminerList());
@@ -56,7 +59,6 @@ public class AddController {
 
     public Region getRoot() {
         return this.root;
-
     }
 
 
