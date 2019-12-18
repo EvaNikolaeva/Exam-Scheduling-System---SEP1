@@ -72,7 +72,7 @@ public class AddController {
         Examiner examiner2 = (Examiner)Examiner2Picker.getValue();
         Room room = (Room)roomCombobox.getValue();
         Course course = (Course)ExamPicker.getValue();
-        Exam exam = new Exam(mydate, course, room, examiner);
+        Exam exam = new Exam(mydate, course, room, examiner, examiner2);
         model.saveExam(exam);
         viewHandler.closeView();
         viewHandler.openView(viewHandler.MAIN_ID);

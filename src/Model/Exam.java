@@ -6,12 +6,11 @@ public class Exam
     private Course course;
     private Examiner examiner1;
     private Examiner examiner2;
-    private Examiner examiner3;
     private Room room;
 
-    public Exam(MyDate date, Course course, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
+    public Exam(MyDate date, Course course, Room room, Examiner examiner1, Examiner examiner2)
     {
-        setAll(date, course, room, examiner1, examiner2, examiner3);
+        setAll(date, course, room, examiner1, examiner2);
     }
 
 
@@ -22,7 +21,6 @@ public class Exam
         this.room = room;
         this.examiner1 = examiner1;
         this.examiner2 = null;
-        this.examiner3 = null;
     }
 
     public MyDate getDate()
@@ -65,16 +63,6 @@ public class Exam
         this.examiner2 = examiner;
     }
 
-    public Examiner getThirdExaminer()
-    {
-        return examiner3;
-    }
-
-    public void setThirdExaminer(Examiner examiner)
-    {
-        this.examiner3 = examiner;
-    }
-
     public Room getRoom()
     {
         return room;
@@ -85,14 +73,13 @@ public class Exam
         this.room = room;
     }
 
-    public void setAll(MyDate date, Course course, Room room, Examiner examiner1, Examiner examiner2, Examiner examiner3)
+    public void setAll(MyDate date, Course course, Room room, Examiner examiner1, Examiner examiner2)
     {
         this.date = date;;
         this.course = course;
         this.room = room;
         this.examiner1 = examiner1;
         this.examiner2 = examiner2;
-        this.examiner3 = null;
     }
 
     public boolean equals(Object obj)
@@ -103,13 +90,13 @@ public class Exam
         }
         Exam other = (Exam)obj;
         return date.equals(other.date) && course.equals(other.course) && examiner1.equals(other.examiner1) &&
-                examiner2.equals(other.examiner2) && examiner3.equals(other.examiner3) && room.equals(other.room);
+                examiner2.equals(other.examiner2) && room.equals(other.room);
     }
 
     public String toString()
     {
         String s = "";
-        s +=  course + ", date: " + date + ", room: " + room + ", examiners: " + examiner1 + ", " + examiner2 + ", " + examiner3;
+        s +=  course + ", date: " + date + ", room: " + room + ", examiners: " + examiner1 + ", " + examiner2;
         return s;
     }
 }
