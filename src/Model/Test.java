@@ -14,11 +14,11 @@ public class Test
 
         Course course = new Course("sdj1x", "Oral", 34,1);
 
-        Examiner examiner1 = new Examiner("Steffen Andersen", "22479652", "1234",  course);
+        Examiner examiner1 = new Examiner("Steffen Andersen", "22479652", "1234",  course,true);
 
-            Examiner examiner2 = new Examiner("Bob the Builder",  "50416377", "4563", course);
+            Examiner examiner2 = new Examiner("Bob the Builder",  "50416377", "4563", course,false);
 
-        Examiner examiner3 = new Examiner("Mona Andersen",  "23252714", "2366",  course);
+        Examiner examiner3 = new Examiner("Mona Andersen",  "23252714", "2366",  course,false);
 
         Exam exam1 = new Exam(date1, course, room, examiner1);
 

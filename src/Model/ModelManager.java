@@ -77,7 +77,7 @@ public class ModelManager implements Model {
     public ArrayList<Course> getDisplayableCourseList() {
         if(courseList!=null) {
             ArrayList<Course> a = new ArrayList();
-            for (int i = 0; courseList.getSize() < i; i++) {
+            for (int i = 0; i < courseList.getSize(); i++) {
                 a.add(courseList.getCourse(i));
             }
             return a;
@@ -90,7 +90,7 @@ public class ModelManager implements Model {
     public ArrayList<Examiner> getDisplayableExaminerList() {
         if (examList!=null) {
             ArrayList<Examiner> a = new ArrayList();
-            for (int i = 0; examinerList.getSize() < i; i++) {
+            for (int i = 0; i < examinerList.getSize(); i++) {
                 a.add(examinerList.getExaminer(i));
             }
             return a;
@@ -103,7 +103,7 @@ public class ModelManager implements Model {
     public ArrayList<Room> getDisplayableRoomList() {
         if (roomList.getSize()!=0) {
             ArrayList<Room> a = new ArrayList();
-            for (int i = 0; roomList.getSize() < i; i++) {
+            for (int i = 0; i < roomList.getSize(); i++) {
                 a.add(roomList.getRoomByIndex(i));
             }
             return a;
