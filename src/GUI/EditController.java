@@ -1,34 +1,32 @@
 package GUI;
 
-import Model.Examiner;
 import Model.Model;
-import Model.MyDate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-
 import javafx.scene.layout.Region;
+import javafx.scene.control.DatePicker;
 
 public class EditController {
 
     @FXML
-    public Label ErrorLabel;
+    private Label ErrorLabel;
     @FXML
-    public ComboBox ExamPicker;
+    private ComboBox ExamPicker;
     @FXML
-    public ComboBox TypePicker;
+    private ComboBox TypePicker;
     @FXML
-    public javafx.scene.control.DatePicker DatePicker;
+    private DatePicker DatePicker;
     @FXML
-    public ComboBox Examiner1Picker;
+    private ComboBox Examiner1Picker;
     @FXML
-    public ComboBox Examiner2Picker;
+    private ComboBox Examiner2Picker;
     @FXML
-    public Button BtnSave;
+    private Button BtnSave;
     @FXML
-    public Button cancelButton;
+    private Button cancelButton;
 
 
     private Region root;

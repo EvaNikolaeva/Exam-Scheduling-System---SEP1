@@ -19,7 +19,7 @@ public class ModelManager implements Model {
     public void saveRoom(Room room) {
         roomList.addRoom(room);
         System.out.println(roomList.getRoomByIndex(0));
-        orderRoomList();
+        //orderRoomList();
 
     }
 
@@ -28,6 +28,7 @@ public class ModelManager implements Model {
     public void saveCourse(Course course) {
         courseList.addCourse(course);
         orderCourseList();
+
     }
 
     @Override
@@ -100,6 +101,11 @@ public class ModelManager implements Model {
         }else  {
             return new ArrayList<Room>();
         }
+    }
+
+    @Override
+    public ArrayList<Exam> getDisplayableExamList() {
+        return null;
     }
 
     //---------------------Order Lists--------------------------------------

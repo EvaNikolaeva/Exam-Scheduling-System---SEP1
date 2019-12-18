@@ -18,7 +18,8 @@ public class LoginController {
     private TextField userNameField;
     @FXML
     private Button loginButton;
-    @FXML private Label errorLabel;
+    @FXML
+    private Label errorLabel;
 
 
     private Region root;
@@ -30,9 +31,9 @@ public class LoginController {
     }
 
     public void init(ViewHandler viewHandler, Model model, Region root) {
-        this.root=root;
-        this.viewHandler=viewHandler;
-        this.model=model;
+        this.root = root;
+        this.viewHandler = viewHandler;
+        this.model = model;
 
         errorLabel.setText("Wrong password! Try again.");
         errorLabel.setVisible(false);
@@ -52,10 +53,10 @@ public class LoginController {
 
     public void LoginButtonPressed(ActionEvent actionEvent) {
         System.out.println("LoginButton Action");
-        if (model.validateLogin(userNameField.getText(),passwordField.getText())){
+        if (model.validateLogin(userNameField.getText(), passwordField.getText())) {
             viewHandler.closeView();
             viewHandler.openView("Main");
-        }else{
+        } else {
             errorLabel.setVisible(true);
 
         }
@@ -63,17 +64,17 @@ public class LoginController {
     }
 
     public void OnEnterTyped(KeyEvent keyEvent) {
-    if(keyEvent.getCode().equals(KeyCode.ENTER)){
-        System.out.println(" Action");
-        if (model.validateLogin(userNameField.getText(),passwordField.getText())){
-            viewHandler.closeView();
-            viewHandler.openView("Main");
-        }else{
-            errorLabel.setVisible(true);
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            System.out.println(" Action");
+            if (model.validateLogin(userNameField.getText(), passwordField.getText())) {
+                viewHandler.closeView();
+                viewHandler.openView("Main");
+            } else {
+                errorLabel.setVisible(true);
+
+            }
+            //todo: fix this enter event.
 
         }
-        //todo: fix this enter event.
-
-    }
     }
 }

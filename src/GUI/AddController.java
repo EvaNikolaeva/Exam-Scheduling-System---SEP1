@@ -13,19 +13,19 @@ import javafx.scene.layout.Region;
 
 public class AddController {
     @FXML
-    public ComboBox roomCombobox;
+    private ComboBox roomCombobox;
     @FXML
-    public Label ErrorLabel;
+    private Label ErrorLabel;
     @FXML
-    public ComboBox ExamPicker;
+    private ComboBox ExamPicker;
     @FXML
-    public javafx.scene.control.DatePicker DatePicker;
+    private javafx.scene.control.DatePicker DatePicker;
     @FXML
-    public ComboBox Examiner1Picker;
+    private ComboBox Examiner1Picker;
     @FXML
-    public ComboBox Examiner2Picker;
+    private ComboBox Examiner2Picker;
     @FXML
-    public Button BtnSave;
+    private Button BtnSave;
     @FXML
 
     private Region root;
