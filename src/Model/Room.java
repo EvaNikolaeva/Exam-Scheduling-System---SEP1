@@ -79,7 +79,7 @@ public class Room {
     }
 
     public String toString() {
-        return room + ", Equipment: " + equipment;
+        return room;
     }
 
     public boolean equals(Object obj) {

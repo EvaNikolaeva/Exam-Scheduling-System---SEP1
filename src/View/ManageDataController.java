@@ -81,7 +81,7 @@ public class ManageDataController {
     private static final List VALIDESEMESTERS= new List();
 
 
-    //----------ExaminerTab
+    //----------ExaminerTab------------------------------------------------
     public void onExaminerComboBoxSelected(ActionEvent actionEvent) {
 
     }
@@ -120,8 +120,11 @@ public class ManageDataController {
             Equipment equipment = new Equipment(roomEquipmentCableCheck.isSelected(), roomEquipmentProjectorCheck.isSelected(), Integer.parseInt(roomNumberOfChairsTextField.getText()), Integer.parseInt(roomNumberOfTablesTextField.getText()));
             Room room = new Room(equipment, roomNumbertextField.getText());
             model.saveRoom(room);
-            System.out.println(model.getDisplayableRoomList().size());
+            model.orderRoomList();
+            roomChooseComboBox.getItems().clear();
             roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
+            reset();
+
         } catch (Exception e) {
             e.getMessage();
         }
@@ -156,10 +159,15 @@ public class ManageDataController {
     }
 
     public void reset() {
+
         courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
         roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
         examinerChooseCombobox.getItems().addAll(model.getDisplayableExaminerList());
-
+        roomEquipmentCableCheck.setSelected(false);
+        roomEquipmentProjectorCheck.setSelected(false);
+        roomNumbertextField.setText("");
+        roomNumberOfChairsTextField.setText("");
+        roomNumberOfTablesTextField.setText("");
 
     }
 
