@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
+
 
 import Model.*;
 
@@ -25,8 +25,7 @@ public class ModelManager implements Model {
     @Override
     public void saveRoom(Room room) {
         roomList.addRoom(room);
-        System.out.println(roomList.getRoomByIndex(0));
-        //orderRoomList();
+        orderRoomList();
 
     }
 
