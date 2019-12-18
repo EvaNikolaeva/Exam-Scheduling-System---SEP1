@@ -67,8 +67,7 @@ public class Examiner {
     public String toString()
     {
         String s = "";
-        s += "Examiner name: " + name + ", phone number: " + phoneNumber + ", id: " + teacherId +
-                ", course: " + course + ", is available: " + availability + ", is external: " + external;
+        s += name +" "+course;
         return s;
     }
 

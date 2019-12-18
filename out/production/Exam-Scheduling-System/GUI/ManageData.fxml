@@ -41,7 +41,7 @@
                         <TextField fx:id="examinerIdTextfield" layoutX="88.0" layoutY="123.0" />
                         <Label layoutX="24.0" layoutY="127.0" text="ID" />
                         <RadioButton fx:id="examinerRadioButtonInternal" layoutX="174.0" layoutY="225.0" mnemonicParsing="false" text="internal" />
-                        <RadioButton fx:id="examinerRadioButtonExtarnal" layoutX="90.0" layoutY="225.0" mnemonicParsing="false" text="extarnal" />
+                        <RadioButton fx:id="examinerRadioButtonExternal" layoutX="90.0" layoutY="225.0" mnemonicParsing="false" text="extarnal" />
                      </children>
                   </AnchorPane>
             </content>

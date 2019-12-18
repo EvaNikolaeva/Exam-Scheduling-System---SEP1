@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ModelManager implements Model {
 
@@ -138,7 +139,7 @@ public class ModelManager implements Model {
             }
         };
         ArrayList arrayList = getDisplayableExaminerList();
-        Collections.sort(arrayList, compareByName);
+        arrayList.sort(compareByName);
         examinerList.setAll(arrayList);
 
     }
@@ -151,8 +152,8 @@ public class ModelManager implements Model {
                 return o1.getRoom().compareTo(o2.getRoom());
             }
         };
-        ArrayList arrayList = getDisplayableExaminerList();
-        Collections.sort(arrayList, compareByNumber);
+        ArrayList arrayList = getDisplayableRoomList();
+        arrayList.sort(compareByNumber);
         roomList.setAll(arrayList);
 
     }
