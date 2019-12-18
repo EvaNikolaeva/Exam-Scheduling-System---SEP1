@@ -52,6 +52,7 @@ public class AddController {
         //todo: add save logic.
         viewHandler.closeView();
         viewHandler.openView(viewHandler.MAIN_ID);
+
     }
 
     public void onCancelPressed(ActionEvent actionEvent) {
