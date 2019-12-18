@@ -1,10 +1,15 @@
 package Model;
 
+import Adapters.NotepadAdapterClass;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class ModelManager implements Model {
+
+    private NotepadAdapterClass note = new NotepadAdapterClass();
 
 
     @Override
@@ -40,13 +45,17 @@ public class ModelManager implements Model {
     //----------------Exam-------------------------------------------------
 
     @Override
-    public void deleteExam(Exam exam) {
+    public void deleteExam(Exam exam) throws FileNotFoundException
+    {
         examList.removeExam(exam);
+        note.saveExamList(examList);
     }
 
     @Override
-    public void saveExam(Exam exam) {
+    public void saveExam(Exam exam) throws FileNotFoundException
+    {
         examList.addExam(exam);
+        note.saveExamList(examList);
     }
 
     //---------------Examiner-----------------------------------------------

@@ -1,6 +1,7 @@
 package Adapters;
 
 import Model.Exam;
+import Model.ExamList;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class NotepadAdapterClass
 {
 
-    public void saveExamList(ArrayList<Exam> toSave) throws FileNotFoundException
+    public void saveExamList(ExamList toSave) throws FileNotFoundException
     {
         Gson gson = new Gson();
         String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\adapter.txt";
@@ -30,7 +31,7 @@ public class NotepadAdapterClass
         System.out.println("End writing data to file: " + file.getAbsolutePath());
     }
 
-    public ArrayList<Exam> loadExamList()
+    public ExamList loadExamList()
     {
         Gson gson = new Gson();
         String nameOfFile = "adapter.txt";
@@ -52,7 +53,7 @@ public class NotepadAdapterClass
         }
         in.close();
 
-        ArrayList<Exam> newExam = gson.fromJson(line,ArrayList.class);
+        ExamList newExam = gson.fromJson(line,ExamList.class);
         System.out.println(newExam.toString());
 
         return newExam;

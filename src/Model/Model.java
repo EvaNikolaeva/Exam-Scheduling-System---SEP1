@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public interface Model {
@@ -14,8 +15,8 @@ public interface Model {
 
 
     public void saveRoom(Room room);
-    public void saveExam(Exam exam);
-    public void deleteExam(Exam exam);
+    public void saveExam(Exam exam) throws FileNotFoundException;
+    public void deleteExam(Exam exam) throws FileNotFoundException;
     public void saveCourse(Course course);
     public void deleteCourse(Course course);
     public void saveExaminer(Examiner examiner);
