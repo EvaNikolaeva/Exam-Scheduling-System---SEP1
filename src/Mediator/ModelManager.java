@@ -21,26 +21,40 @@ public class ModelManager implements Model {
         }
         return false;
     }
-
+    //-------------Room--------------------------------------------------
     @Override
-    public void saveRoom(Room room) {
+    public void saveRoom(Room room) throws FileNotFoundException
+    {
         roomList.addRoom(room);
         orderRoomList();
+        note.saveRoomList(roomList);
+        backup.saveRoomList(roomList);
+    }
 
+    @Override
+    public void deleteRoom(Room room) throws FileNotFoundException
+    {
+        roomList.removeRoom(room);
+        note.saveRoomList(roomList);
+        backup.saveRoomList(roomList);
     }
 
     //----------------Course----------------------------------------------
     @Override
-    public void saveCourse(Course course) {
+    public void saveCourse(Course course) throws FileNotFoundException
+    {
         courseList.addCourse(course);
         orderCourseList();
-
+        note.saveCourseList(courseList);
+        backup.saveCourseList(courseList);
     }
 
     @Override
-    public void deleteCourse(Course course) {
+    public void deleteCourse(Course course) throws FileNotFoundException
+    {
         courseList.removeCourse(course);
-
+        note.saveCourseList(courseList);
+        backup.saveCourseList(courseList);
     }
 
     //----------------Exam-------------------------------------------------
@@ -64,14 +78,20 @@ public class ModelManager implements Model {
     //---------------Examiner-----------------------------------------------
 
     @Override
-    public void saveExaminer(Examiner examiner) {
+    public void saveExaminer(Examiner examiner) throws FileNotFoundException
+    {
         examinerList.addExaminer(examiner);
         orderExaminerList();
+        note.saveExaminerList(examinerList);
+        backup.saveExaminerList(examinerList);
     }
 
     @Override
-    public void deleteExaminer(Examiner examiner) {
+    public void deleteExaminer(Examiner examiner) throws FileNotFoundException
+    {
         examinerList.removeExaminer(examiner);
+        note.saveExaminerList(examinerList);
+        backup.saveExaminerList(examinerList);
     }
 
 
