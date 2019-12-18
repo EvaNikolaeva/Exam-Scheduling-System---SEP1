@@ -93,7 +93,7 @@ public class ManageDataController {
     }
 
     public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
-        Examiner examiner = new Examiner(examinerNameTextField.getText(), examinerPhoneTextField.getText(), examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue());
+        Examiner examiner = new Examiner(examinerNameTextField.getText(), examinerPhoneTextField.getText(), examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue(),true);
         model.saveExaminer(examiner);
     }
 
