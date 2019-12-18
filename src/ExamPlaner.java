@@ -11,6 +11,5 @@ public class ExamPlaner extends Application {
         Model model = new ModelManager();
         ViewHandler view = new ViewHandler(model);
         view.start(primaryStage);
-
     }
 }

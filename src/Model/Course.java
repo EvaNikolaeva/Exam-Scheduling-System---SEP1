@@ -158,9 +158,7 @@ public class Course
 
     public String toString()
     {
-        String s = "";
-        s += "Course: " + name + ", type: " + type + ", students attending: " + numberOfStudents;
-        return s;
+        return name;
     }
 
     public boolean equals(Object obj)

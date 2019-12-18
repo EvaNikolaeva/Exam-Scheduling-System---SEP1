@@ -9,6 +9,10 @@ import java.util.Comparator;
 import Model.*;
 
 public class ModelManager implements Model {
+    CourseList courseList = new CourseList();
+    ExaminerList examinerList = new ExaminerList();
+    RoomList roomList = new RoomList();
+    ExamList examList = new ExamList();
 
     private NotepadAdapterClass note = new NotepadAdapterClass();
     private Backup backup = new Backup();
@@ -98,7 +102,7 @@ public class ModelManager implements Model {
     //-----------------Get Lists-------------------------------------------
     @Override
     public ArrayList<Course> getDisplayableCourseList() {
-        if(courseList!=null) {
+        if(courseList.getSize() != 0) {
             ArrayList<Course> a = new ArrayList();
             for (int i = 0; i < courseList.getSize(); i++) {
                 a.add(courseList.getCourse(i));
@@ -111,7 +115,7 @@ public class ModelManager implements Model {
 
     @Override
     public ArrayList<Examiner> getDisplayableExaminerList() {
-        if (examList!=null) {
+        if (examinerList.getSize() != 0) {
             ArrayList<Examiner> a = new ArrayList();
             for (int i = 0; i < examinerList.getSize(); i++) {
                 a.add(examinerList.getExaminer(i));
@@ -124,20 +128,32 @@ public class ModelManager implements Model {
 
     @Override
     public ArrayList<Room> getDisplayableRoomList() {
-        if (roomList.getSize()!=0) {
-            ArrayList<Room> a = new ArrayList();
-            for (int i = 0; i < roomList.getSize(); i++) {
-                a.add(roomList.getRoomByIndex(i));
+            if (roomList.getSize()!=0) {
+                ArrayList<Room> a = new ArrayList();
+                for (int i = 0; i < roomList.getSize(); i++) {
+                    a.add(roomList.getRoomByIndex(i));
+                }
+                return a;
+            }else  {
+                return new ArrayList<Room>();
             }
-            return a;
-        }else  {
-            return new ArrayList<Room>();
-        }
     }
 
     @Override
     public ArrayList<Exam> getDisplayableExamList() {
-        return null;
+        if(examList.getSize() != 0)
+        {
+            ArrayList<Exam> a = new ArrayList<>();
+            for(int i = 0; i < examList.getSize(); i++)
+            {
+                a.add(examList.getExam(i));
+            }
+            return a;
+        }
+        else
+        {
+            return new ArrayList<Exam>();
+        }
     }
 
     //---------------------Order Lists--------------------------------------
@@ -179,5 +195,31 @@ public class ModelManager implements Model {
         roomList.setAll(arrayList);
 
     }
+
+    //------------------Loading all lists------------------------------------
+    @Override
+    public void loadingExamList()
+    {
+        examList =  note.loadExamList();
+    }
+
+    @Override
+    public void loadingRoomList()
+    {
+        roomList = note.loadRoomList();
+    }
+
+    @Override
+    public void loadingExaminerList()
+    {
+        examinerList = note.loadExaminerList();
+    }
+
+    @Override
+    public void loadingCourseList()
+    {
+        courseList = note.loadCourseList();
+    }
+
 
 }

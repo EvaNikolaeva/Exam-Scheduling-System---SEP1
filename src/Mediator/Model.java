@@ -6,10 +6,7 @@ import Model.*;
 
 public interface Model {
     //todo: add model instance variables.
-    CourseList courseList = new CourseList();
-    ExaminerList examinerList = new ExaminerList();
-    RoomList roomList = new RoomList();
-    ExamList examList = new ExamList();
+
 
     public boolean validateLogin(String username, String password);
 
@@ -34,5 +31,10 @@ public interface Model {
     public void orderCourseList(); //by name
     public void orderExaminerList(); //by Id
     public void orderRoomList(); //by name
+
+    public void loadingExamList();
+    public void loadingRoomList();
+    public void loadingExaminerList();
+    public void loadingCourseList();
 
 }

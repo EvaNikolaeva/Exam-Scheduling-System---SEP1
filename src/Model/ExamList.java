@@ -39,6 +39,11 @@ public class ExamList
         return examsByDate;
     }
 
+    public int getSize()
+    {
+        return exams.size();
+    }
+
     public String toString()
     {
         String s = "";

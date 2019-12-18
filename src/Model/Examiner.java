@@ -3,7 +3,7 @@ public class Examiner {
     private String name;
     private String phoneNumber;
     private String teacherId;
-    private boolean[] availability;
+    private boolean availability;
     private Course course;
     private boolean external;
 
@@ -15,12 +15,9 @@ public class Examiner {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.teacherId = teacherId;
-        for (int i = 0; i < 31; i++) {
-            this.availability[i] = true;
-        }
         this.course = course;
         this.external = external;
-
+        this.availability = true;
     }
 
     public String getName() {
@@ -48,12 +45,12 @@ public class Examiner {
         this.teacherId = teacherId;
     }
 
-    public boolean isAvailable(int index) {
-        return availability[index];
+    public boolean isAvailable() {
+        return availability;
     }
 
-    public void setAvailability(boolean availability, int index) {
-        this.availability[index] = availability;
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
     }
 
     public Course getCourse() {
@@ -66,9 +63,7 @@ public class Examiner {
 
     public String toString()
     {
-        String s = "";
-        s += name +" "+course;
-        return s;
+        return name;
     }
 
     public boolean equals(Object obj)
