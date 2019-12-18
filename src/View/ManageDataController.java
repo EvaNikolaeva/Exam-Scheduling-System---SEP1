@@ -13,6 +13,7 @@ import Model.Equipment;
 import Model.*;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ManageDataController {
@@ -83,22 +84,25 @@ public class ManageDataController {
 
     //----------ExaminerTab------------------------------------------------
     public void onExaminerComboBoxSelected(ActionEvent actionEvent) {
-
+    
     }
 
-    public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) {
+    public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    {
         Examiner examiner = (Examiner) examinerCourseComboBox.getValue();
         model.deleteExaminer(examiner);
 
     }
 
-    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) {
+    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    {
         Examiner examiner = new Examiner(examinerNameTextField.getText(), examinerPhoneTextField.getText(), examinerIdTextfield.getText(), (Course) examinerCourseComboBox.getValue(),true);
         model.saveExaminer(examiner);
     }
 
     //-----------COURSE TAB-----------------------------------------
-    public void onCourseSaveButtonPressed(ActionEvent actionEvent) {
+    public void onCourseSaveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    {
         String type = toggleGroup.getSelectedToggle().toString();
         System.out.println("." + courseNameTextField.getText() + ".");
         Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()), Integer.parseInt(courseSemesterComboBox.getValue().toString()));
