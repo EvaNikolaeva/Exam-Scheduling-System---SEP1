@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="224.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.EditController">
+    <children>
+        <Label layoutX="23.0" layoutY="16.0" text="Exam" />
+        <Label layoutX="23.0" layoutY="64.0" text="Type" />
+        <Label layoutX="24.0" layoutY="114.0" text="Date" />
+        <Label layoutX="25.0" layoutY="172.0" text="Examiner 1" />
+        <Label layoutX="25.0" layoutY="223.0" text="Examiner 2" />
+        <ComboBox fx:id="ExamPicker" layoutX="23.0" layoutY="33.0" prefHeight="25.0" prefWidth="178.0" promptText="Choose" />
+        <ComboBox fx:id="TypePicker" layoutX="23.0" layoutY="81.0" prefHeight="25.0" prefWidth="178.0" promptText="Choose" />
+        <DatePicker fx:id="DatePicker" layoutX="24.0" layoutY="131.0" prefHeight="25.0" prefWidth="178.0" />
+        <ComboBox fx:id="Examiner1Picker" layoutX="24.0" layoutY="189.0" prefHeight="25.0" prefWidth="178.0" promptText="Choose" />
+        <ComboBox fx:id="Examiner2Picker" layoutX="23.0" layoutY="240.0" prefHeight="25.0" prefWidth="178.0" promptText="Choose" />
+        <Button fx:id="BtnSave" layoutX="158.0" layoutY="361.0" mnemonicParsing="false" onAction="#onSaveButtonPressed" prefHeight="25.0" prefWidth="52.0" text="Save" />
+        <Label fx:id="ErrorLabel" layoutX="22.0" layoutY="328.0" prefHeight="17.0" prefWidth="178.0" text="Error message" textFill="RED" />
+        <Label layoutX="22.0" layoutY="275.0" text="Room" />
+        <ComboBox layoutX="22.0" layoutY="292.0" prefHeight="25.0" prefWidth="178.0" promptText="Choose" />
+      <Button fx:id="cancelButton" layoutX="23.0" layoutY="361.0" mnemonicParsing="false" onAction="#onCancelButtonPressed" text="Cancel" />
+    </children>
+</AnchorPane>
