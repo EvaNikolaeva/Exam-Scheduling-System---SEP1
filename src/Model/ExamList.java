@@ -1,9 +1,5 @@
 package Model;
 
-import Adapters.Backup;
-import Adapters.NotepadAdapterClass;
-
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ExamList

@@ -1,6 +1,6 @@
-import GUI.ViewHandler;
-import Model.Model;
-import Model.ModelManager;
+import View.ViewHandler;
+import Mediator.Model;
+import Mediator.ModelManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

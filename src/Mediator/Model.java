@@ -1,7 +1,8 @@
-package Model;
+package Mediator;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import Model.*;
 
 public interface Model {
     //todo: add model instance variables.
