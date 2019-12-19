@@ -8,11 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
-
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
-
 
 public class AddController {
     @FXML
@@ -27,9 +25,6 @@ public class AddController {
     private ComboBox Examiner1Picker;
     @FXML
     private ComboBox Examiner2Picker;
-    @FXML
-    private Button BtnSave;
-    @FXML
 
     private Region root;
     private ViewHandler viewHandler;
@@ -40,10 +35,7 @@ public class AddController {
         this.root = root;
         this.viewHandler = viewHandler;
         this.model = model;
-        ExamPicker.getItems().addAll(model.getDisplayableCourseList());
-        Examiner1Picker.getItems().addAll(model.getDisplayableExaminerList());
-        Examiner2Picker.getItems().addAll(model.getDisplayableExaminerList());
-        roomCombobox.getItems().addAll(model.getDisplayableRoomList());
+        reset();
     }
 
     public void reset() {
@@ -58,11 +50,12 @@ public class AddController {
     }
 
     public Region getRoot() {
+        init(viewHandler, model, root);
         return this.root;
     }
 
 
-    public void onSavePressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onSavePressed(ActionEvent actionEvent) throws IOException
     {
         //todo: add save logic.
         LocalDate date= DatePicker.getValue();
@@ -74,6 +67,7 @@ public class AddController {
         Course course = (Course)ExamPicker.getValue();
         Exam exam = new Exam(mydate, course, room, examiner, examiner2);
         model.saveExam(exam);
+
         viewHandler.closeView();
         viewHandler.openView(viewHandler.MAIN_ID);
     }

@@ -8,91 +8,114 @@ import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NotepadAdapterClass
 {
 
-    public void saveExamList(ExamList toSave) throws FileNotFoundException
+    public void saveExamList(ExamList toSave) throws IOException
     {
-        Gson gson = new Gson();
-        String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\examList.txt";
+        String filename = "Notepad\\examList.txt";
         File file = new File(filename);
+        try{
+            Gson gson = new Gson();
 
-        String convert = gson.toJson(toSave);
-        System.out.println(convert);
+            String convert = gson.toJson(toSave);
+            System.out.println(convert);
 
-        PrintWriter out = new PrintWriter(file);
+            PrintWriter out = new PrintWriter(file);
 
-        out.println(convert);
-        out.flush();
-        out.close();
+            out.println(convert);
+            out.flush();
+            out.close();
 
-        System.out.println("End writing data to file: " + file.getAbsolutePath());
+            System.out.println("End writing data to file: " + file.getAbsolutePath());
+        }
+        catch(FileNotFoundException e){
+            file.createNewFile();
+        }
     }
 
-    public void saveRoomList(RoomList toSave) throws FileNotFoundException
+    public void saveRoomList(RoomList toSave) throws IOException
     {
-        Gson gson = new Gson();
-        String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\roomList.txt";
+        String filename = "Notepad\\roomList.txt";
         File file = new File(filename);
+        try{
+            Gson gson = new Gson();
 
-        String convert = gson.toJson(toSave);
-        System.out.println(convert);
 
-        PrintWriter out = new PrintWriter(file);
+            String convert = gson.toJson(toSave);
+            System.out.println(convert);
 
-        out.println(convert);
-        out.flush();
-        out.close();
+            PrintWriter out = new PrintWriter(file);
 
-        System.out.println("End writing data to file: " + file.getAbsolutePath());
+            out.println(convert);
+            out.flush();
+            out.close();
+
+            System.out.println("End writing data to file: " + file.getAbsolutePath());
+        }
+        catch(FileNotFoundException e){
+            file.createNewFile();
+        }
     }
 
-    public void saveExaminerList(ExaminerList toSave) throws FileNotFoundException
+    public void saveExaminerList(ExaminerList toSave) throws IOException
     {
-        Gson gson = new Gson();
-        String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\examinerList.txt";
+        String filename = "Notepad\\examinerList.txt";
         File file = new File(filename);
+        try{
+            Gson gson = new Gson();
 
-        String convert = gson.toJson(toSave);
-        System.out.println(convert);
+            String convert = gson.toJson(toSave);
+            System.out.println(convert);
 
-        PrintWriter out = new PrintWriter(file);
+            PrintWriter out = new PrintWriter(file);
 
-        out.println(convert);
-        out.flush();
-        out.close();
+            out.println(convert);
+            out.flush();
+            out.close();
 
-        System.out.println("End writing data to file: " + file.getAbsolutePath());
+            System.out.println("End writing data to file: " + file.getAbsolutePath());
+        }
+        catch(FileNotFoundException e){
+            file.createNewFile();
+        }
     }
 
-    public void saveCourseList(CourseList toSave) throws FileNotFoundException
+    public void saveCourseList(CourseList toSave) throws IOException
     {
-        Gson gson = new Gson();
-        String filename = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\courseList.txt";
+        String filename = "Notepad\\courseList.txt";
         File file = new File(filename);
+        try
+        {
+            Gson gson = new Gson();
 
-        String convert = gson.toJson(toSave);
-        System.out.println(convert);
+            String convert = gson.toJson(toSave);
+            System.out.println(convert);
 
-        PrintWriter out = new PrintWriter(file);
+            PrintWriter out = new PrintWriter(file);
 
-        out.println(convert);
-        out.flush();
-        out.close();
+            out.println(convert);
+            out.flush();
+            out.close();
 
-        System.out.println("End writing data to file: " + file.getAbsolutePath());
+            System.out.println("End writing data to file: " + file.getAbsolutePath());
+        }
+        catch (FileNotFoundException e)
+        {
+            file.createNewFile();
+        }
     }
 
-    public ExamList loadExamList()
+    public ExamList loadExamList() throws IOException
     {
         Gson gson = new Gson();
-        String nameOfFile = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\examList.txt";
+        String nameOfFile = "Notepad\\examList.txt";
         File readingFile = new File(nameOfFile);
-
+        readingFile.createNewFile();
         Scanner in = null;
         try
         {
@@ -110,17 +133,20 @@ public class NotepadAdapterClass
         in.close();
 
         ExamList newExam = gson.fromJson(line,ExamList.class);
-        System.out.println(newExam.toString());
+
+        if(newExam == null){
+            newExam = new ExamList();
+        }
 
         return newExam;
     }
 
-    public RoomList loadRoomList()
+    public RoomList loadRoomList() throws IOException
     {
         Gson gson = new Gson();
-        String nameOfFile = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\roomList.txt";
+        String nameOfFile = "Notepad\\roomList.txt";
         File readingFile = new File(nameOfFile);
-
+        readingFile.createNewFile();
         Scanner in = null;
         try
         {
@@ -138,24 +164,27 @@ public class NotepadAdapterClass
         in.close();
 
         RoomList newRoom = gson.fromJson(line,RoomList.class);
-        System.out.println(newRoom.toString());
+
+        if(newRoom == null){
+            newRoom = new RoomList();
+        }
 
         return newRoom;
     }
 
-    public ExaminerList loadExaminerList()
+    public ExaminerList loadExaminerList() throws IOException
     {
         Gson gson = new Gson();
-        String nameOfFile = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\examinerList.txt";
+        String nameOfFile = "Notepad\\examinerList.txt";
         File readingFile = new File(nameOfFile);
-
+        readingFile.createNewFile();
         Scanner in = null;
         try
         {
             in = new Scanner(readingFile);
         } catch (FileNotFoundException e)
         {
-            e.printStackTrace();
+
         }
 
         String line = "";
@@ -166,17 +195,20 @@ public class NotepadAdapterClass
         in.close();
 
         ExaminerList newExaminer = gson.fromJson(line,ExaminerList.class);
-        System.out.println(newExaminer.toString());
+
+        if(newExaminer == null){
+            newExaminer = new ExaminerList();
+        }
 
         return newExaminer;
     }
 
-    public CourseList loadCourseList()
+    public CourseList loadCourseList() throws IOException
     {
         Gson gson = new Gson();
-        String nameOfFile = "E:\\SEP1\\Exam-Scheduling-System-SEP1\\Notepad\\courseList.txt";
+        String nameOfFile = "Notepad\\courseList.txt";
         File readingFile = new File(nameOfFile);
-
+        readingFile.createNewFile();
         Scanner in = null;
         try
         {
@@ -194,7 +226,10 @@ public class NotepadAdapterClass
         in.close();
 
         CourseList newCourse = gson.fromJson(line,CourseList.class);
-        System.out.println(newCourse.toString());
+
+        if(newCourse == null){
+            newCourse = new CourseList();
+        }
 
         return newCourse;
     }

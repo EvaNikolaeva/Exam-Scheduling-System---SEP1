@@ -158,8 +158,7 @@ public class Exam
             return false;
         }
         Exam other = (Exam)obj;
-        return date.equals(other.date) && course.equals(other.course) && examiner1.equals(other.examiner1) &&
-                examiner2.equals(other.examiner2);
+        return date.equals(other.date) && course.equals(other.course);
     }
 
     /**

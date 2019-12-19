@@ -3,36 +3,28 @@ package View;
 import Mediator.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
-
 import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 
+import Model.Exam;
 
 public class MainController{
+
     public MenuItem mainMenuItemAbout;
+
     private ViewHandler viewHandler;
     private Region root;
     private Model model;
 
     @FXML
-    private Button addExamBtn;
-    @FXML
-    private Button removeExamBtn;
-    @FXML
-    private Button editExamBtn;
-    @FXML
-    private Button exportBtn;
-    @FXML
-    private  Button manageDataBtn;
-    @FXML
-    private  TableView tableView;
+    private ListView<Exam> listView;
 
 
     public void onAddExamBtn(ActionEvent actionEvent) {
@@ -65,15 +57,16 @@ public class MainController{
         this.viewHandler = viewHandler;
         this.model=model;
 
+        reset();
     }
 
     public void reset() {
-
+        listView.getItems().clear();
+        listView.getItems().addAll(model.getDisplayableExamList());
     }
 
     public Region getRoot() {
         return this.root;
-
     }
 
     public void onMenuItemSelected(ActionEvent actionEvent) throws MalformedURLException {

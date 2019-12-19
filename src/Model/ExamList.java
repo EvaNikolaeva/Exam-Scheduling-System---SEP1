@@ -11,6 +11,10 @@ public class ExamList
         this.exams = new ArrayList<>();
     }
 
+    public ArrayList<Exam> getExams(){
+        return exams;
+    }
+
     public void addExam(Exam exam)
     {
         exams.add(exam);

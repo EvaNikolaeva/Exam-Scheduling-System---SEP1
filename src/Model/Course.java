@@ -8,7 +8,6 @@ package Model;
  */
 public class Course
 {
-    private int semester;
     private String name;
     private String type;
     private int numberOfStudents;
@@ -24,11 +23,9 @@ public class Course
      * @param name             the name of the course
      * @param type             the type of the exam
      * @param numberOfStudents the number of students taking the course
-     * @param semester         the semester
      */
-    public Course(String name, String type, int numberOfStudents, int semester)
+    public Course(String name, String type, int numberOfStudents)
     {
-        this.semester = semester;
         setCourse(name, type, numberOfStudents);
     }
 
@@ -108,26 +105,6 @@ public class Course
     }
 
     /**
-     * Getter for semester.
-     *
-     * @return the semester
-     */
-    public int getSemester()
-    {
-        return semester;
-    }
-
-    /**
-     * Setter for semester.
-     *
-     * @param semester the semester
-     */
-    public void setSemester(int semester)
-    {
-        this.semester = semester;
-    }
-
-    /**
      * Sets the course and checks if the name is legal.
      *
      * @param name             the name of the course
@@ -181,6 +158,6 @@ public class Course
         }
         Course other = (Course)obj;
         return name.equals(other.name) && type.equals(other.type) && numberOfStudents == other.numberOfStudents
-                && semester == other.semester;
+                ;
     }
 }

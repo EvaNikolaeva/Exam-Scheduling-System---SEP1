@@ -14,6 +14,7 @@ import Model.*;
 
 import java.awt.*;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ManageDataController {
@@ -37,6 +38,7 @@ public class ManageDataController {
     private TextField courseNumberOfStudents;
     @FXML
     private RadioButton courseTypeWrittenRadioButton;
+
     @FXML
     private RadioButton courseTypeOralRadioButton;
     @FXML
@@ -67,8 +69,6 @@ public class ManageDataController {
     @FXML
     private RadioButton examinerRadioButtonExternal;
     @FXML
-    private ComboBox courseSemesterComboBox;
-    @FXML
     private CheckBox roomEquipmentCableCheck;
     @FXML
     private CheckBox roomEquipmentProjectorCheck;
@@ -82,12 +82,10 @@ public class ManageDataController {
     private ViewHandler viewHandler;
     private Region root;
     private Model model;
-    private static final List VALIDESEMESTERS= new List();
 
     private boolean examinerSelected;
     private boolean courseSelected;
     private boolean roomSelected;
-
 
     //----------ExaminerTab------------------------------------------------
     public void onExaminerComboBoxSelected(ActionEvent actionEvent) {
@@ -106,23 +104,17 @@ public class ManageDataController {
         {
             examinerRadioButtonInternal.fire();
         }
-        else
-        {
-            examinerRadioButtonInternal.setSelected(false);
-            examinerRadioButtonExternal.setSelected(false);
-        }
         this.examinerSelected = true;
-
     }
 
-    public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onExaminerDeleteButtonPressed(ActionEvent actionEvent) throws IOException
     {
         Examiner examiner = examinerChooseCombobox.getSelectionModel().getSelectedItem();
         model.deleteExaminer(examiner);
         reset();
     }
 
-    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onExaminerSaveButtonPressed(ActionEvent actionEvent) throws IOException
     {
             if (!(examinerSelected))
             {
@@ -144,22 +136,20 @@ public class ManageDataController {
     }
 
     //-----------COURSE TAB-----------------------------------------
-    public void onCourseSaveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onCourseSaveButtonPressed(ActionEvent actionEvent) throws IOException
     {
         if(!(courseSelected))
         {
-            String type = toggleGroupCourse.getSelectedToggle().toString();
-            Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()),
-                    Integer.parseInt(courseSemesterComboBox.getValue().toString()));
+            String type = (String) toggleGroupCourse.getSelectedToggle().getUserData();
+            Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()));
             model.saveCourse(course);
             reset();
         }
         if(courseSelected)
         {
-            model.deleteCourse((Course)courseChooseComboBox.getSelectionModel().getSelectedItem());
+            model.deleteCourse(courseChooseComboBox.getSelectionModel().getSelectedItem().getName());
             String type = toggleGroupCourse.getSelectedToggle().toString();
-            Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()),
-                    Integer.parseInt(courseSemesterComboBox.getValue().toString()));
+            Course course = new Course(courseNameTextField.getText(), type, Integer.parseInt(courseNumberOfStudents.getText()));
             model.saveCourse(course);
             model.orderCourseList();
             this.courseSelected = false;
@@ -167,10 +157,10 @@ public class ManageDataController {
         }
     }
 
-    public void onCourseRemoveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onCourseRemoveButtonPressed(ActionEvent actionEvent) throws IOException
     {
-        Course course = (Course) courseChooseComboBox.getValue();
-        model.deleteCourse(course);
+        model.deleteCourse(courseChooseComboBox.getValue().getName());
+        this.courseSelected = false;
         reset();
     }
 
@@ -180,6 +170,7 @@ public class ManageDataController {
         courseNumberOfStudents.setText(Integer.toString(course.getNumberOfStudents()));
         courseTypeOralRadioButton.setSelected(false);
         courseTypeWrittenRadioButton.setSelected(false);
+
         if(course.getType().equalsIgnoreCase("Written"))
         {
             courseTypeWrittenRadioButton.fire();
@@ -188,25 +179,20 @@ public class ManageDataController {
         {
             courseTypeOralRadioButton.fire();
         }
-        else
-        {
-            courseTypeOralRadioButton.setSelected(false);
-            courseTypeWrittenRadioButton.setSelected(false);
-        }
+
         this.courseSelected = true;
     }
     //-------ROOM TAB---------------------------------------
 
-    public void onRoomSaveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onRoomSaveButtonPressed(ActionEvent actionEvent) throws IOException
     {
+
             if(!(roomSelected))
             {
                 Equipment equipment = new Equipment(roomEquipmentCableCheck.isSelected(), roomEquipmentProjectorCheck.isSelected(), Integer.parseInt(roomNumberOfChairsTextField.getText()), Integer.parseInt(roomNumberOfTablesTextField.getText()));
                 Room room = new Room(equipment, roomNumbertextField.getText());
                 model.saveRoom(room);
                 model.orderRoomList();
-                roomChooseComboBox.getItems().clear();
-                roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
                 reset();
             }
             if(roomSelected)
@@ -240,7 +226,7 @@ public class ManageDataController {
         this.roomSelected = true;
     }
 
-    public void onRoomRemoveButtonPressed(ActionEvent actionEvent) throws FileNotFoundException
+    public void onRoomRemoveButtonPressed(ActionEvent actionEvent) throws IOException
     {
         Room room = (Room) roomChooseComboBox.getValue();
         model.deleteRoom(room);
@@ -252,45 +238,52 @@ public class ManageDataController {
         this.root = root;
         this.viewHandler = viewHandler;
         this.model = model;
+        reset();
+    }
 
+    public void reset(){
         courseTypeWrittenRadioButton.setToggleGroup(toggleGroupCourse);
         courseTypeOralRadioButton.setToggleGroup(toggleGroupCourse);
 
         examinerRadioButtonExternal.setToggleGroup(toggleGroupExaminer);
         examinerRadioButtonInternal.setToggleGroup(toggleGroupExaminer);
 
+        courseTypeWrittenRadioButton.setUserData(new String("written"));
+        courseTypeOralRadioButton.setUserData(new String("oral"));
+        examinerRadioButtonInternal.setUserData(new String("internal"));
+        examinerRadioButtonExternal.setUserData(new String("external"));
 
-        ArrayList<Integer> semesters = new ArrayList<>();
-        semesters.add(1);
-        semesters.add(2);
-        semesters.add(3);
-        semesters.add(4);
-        courseSemesterComboBox.getItems().addAll(semesters);
-        courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
-        roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
+        examinerNameTextField.setText("");
+        examinerPhoneTextField.setText("");
+        examinerIdTextfield.setText("");
 
-    }
+        courseNameTextField.setText("");
+        courseNumberOfStudents.setText("");
 
-    public void reset() {
-        courseChooseComboBox.getItems().clear();
-        roomChooseComboBox.getItems().clear();
-        examinerCourseComboBox.getItems().clear();
-        examinerCourseComboBox.getItems().clear();
-
-        courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
-        roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
-        examinerChooseCombobox.getItems().addAll(model.getDisplayableExaminerList());
-        examinerCourseComboBox.getItems().addAll(model.getDisplayableCourseList());
-
-        roomEquipmentCableCheck.setSelected(false);
-        roomEquipmentProjectorCheck.setSelected(false);
         roomNumbertextField.setText("");
         roomNumberOfChairsTextField.setText("");
         roomNumberOfTablesTextField.setText("");
 
+        courseChooseComboBox.getItems().clear();
+        roomChooseComboBox.getItems().clear();
+        examinerCourseComboBox.getItems().clear();
+        examinerChooseCombobox.getItems().clear();
+
+        examinerRadioButtonInternal.setSelected(false);
+        examinerRadioButtonExternal.setSelected(false);
+        courseTypeOralRadioButton.setSelected(false);
+        courseTypeWrittenRadioButton.setSelected(false);
+        roomEquipmentCableCheck.setSelected(false);
+        roomEquipmentProjectorCheck.setSelected(false);
+
+        courseChooseComboBox.getItems().addAll(model.getDisplayableCourseList());
+        examinerCourseComboBox.getItems().addAll(model.getDisplayableCourseList());
+        roomChooseComboBox.getItems().addAll(model.getDisplayableRoomList());
+        examinerChooseCombobox.getItems().addAll(model.getDisplayableExaminerList());
     }
 
     public Region getRoot() {
+        init(viewHandler,model,root);
         return root;
     }
 

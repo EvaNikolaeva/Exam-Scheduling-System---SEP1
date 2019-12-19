@@ -19,6 +19,10 @@ public class RoomList
         this.rooms = new ArrayList<>();
     }
 
+    public ArrayList<Room> getRooms(){
+        return rooms;
+    }
+
     /**
      * Adding a room to the list.
      *
@@ -56,26 +60,6 @@ public class RoomList
         }
         return null;
     }
-
-    /**
-     * Getting the available rooms on a specific day.
-     *
-     * @param day the day
-     * @return an ArrayList including the available rooms on a specific day
-     */
-    public ArrayList<Room> getAvailableRooms(int day)
-    {
-        ArrayList<Room> availableRooms = new ArrayList<>();
-        for(int i = 0; i < rooms.size(); i++)
-        {
-            if(rooms.get(i).getAvailability(day))
-            {
-                availableRooms.add(rooms.get(i));
-            }
-        }
-        return availableRooms;
-    }
-
     /**
      * Getting rooms with cables.
      *

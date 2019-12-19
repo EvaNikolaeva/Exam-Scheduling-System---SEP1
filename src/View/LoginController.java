@@ -17,10 +17,7 @@ public class LoginController {
     @FXML
     private TextField userNameField;
     @FXML
-    private Button loginButton;
-    @FXML
     private Label errorLabel;
-
 
     private Region root;
     private ViewHandler viewHandler;
@@ -35,9 +32,7 @@ public class LoginController {
         this.viewHandler = viewHandler;
         this.model = model;
 
-        errorLabel.setText("Wrong password! Try again.");
-        errorLabel.setVisible(false);
-        System.out.println(errorLabel.getText());
+        reset();
 
     }
 

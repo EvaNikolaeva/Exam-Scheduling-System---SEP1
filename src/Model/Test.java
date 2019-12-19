@@ -12,7 +12,7 @@ public class Test
 
         MyDate date2 = new MyDate();
 
-        Course course = new Course("sdj1x", "Oral", 34,1);
+        Course course = new Course("sdj1x", "Oral", 34);
 
         Examiner examiner1 = new Examiner("Steffen Andersen", "22479652", "1234",  course,true);
 

@@ -11,6 +11,10 @@ public class ExaminerList
         this.examiners = new ArrayList<>();
     }
 
+    public ArrayList<Examiner> getExaminers(){
+        return examiners;
+    }
+
     public void addExaminer(Examiner examiner)
     {
         examiners.add(examiner);

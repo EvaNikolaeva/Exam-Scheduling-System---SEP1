@@ -37,7 +37,7 @@ public class ViewHandler {
 
     public ViewHandler(Model model) {
 
-        currentScene = new Scene(new Region());
+        currentScene = new Scene(loadLoginView());
         this.model = model;
     }
 
@@ -85,35 +85,27 @@ public class ViewHandler {
     }
 
     private Region loadRemoveView() {
-        if (removeController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource(REMOVE));
-                Region root = loader.load();
-                removeController = loader.getController();
-                removeController.init(this, model, root);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            removeController.reset();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(REMOVE));
+            Region root = loader.load();
+            removeController = loader.getController();
+            removeController.init(this, model, root);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return removeController.getRoot();
     }
 
     private Region loadManageView() {
-        if (manageDataController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource(MANAGE));
-                Region root = loader.load();
-                manageDataController = loader.getController();
-                manageDataController.init(this, model, root);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            manageDataController.reset();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(MANAGE));
+            Region root = loader.load();
+            manageDataController = loader.getController();
+            manageDataController.init(this, model, root);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return manageDataController.getRoot();
     }
@@ -121,18 +113,14 @@ public class ViewHandler {
 
     private Region loadLoginView() {
         {
-            if (loginController == null) {
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource(LOGIN));
-                    Region root = loader.load();
-                    loginController = loader.getController();
-                    loginController.init(this, model, root);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                loginController.reset();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(LOGIN));
+                Region root = loader.load();
+                loginController = loader.getController();
+                loginController.init(this, model, root);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             return loginController.getRoot();
         }
@@ -143,18 +131,14 @@ public class ViewHandler {
     }
 
     private Region loadEditView() {
-        if (editController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource(EDIT));
-                Region root = loader.load();
-                editController = loader.getController();
-                editController.init(this, model, root);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            editController.reset();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(EDIT));
+            Region root = loader.load();
+            editController = loader.getController();
+            editController.init(this, model, root);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return editController.getRoot();
     }
@@ -162,18 +146,14 @@ public class ViewHandler {
 
     private Region loadAddView() {
         {
-            if (addController == null) {
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource(ADD));
-                    Region root = loader.load();
-                    addController = loader.getController();
-                    addController.init(this, model, root);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                addController.reset();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(ADD));
+                Region root = loader.load();
+                addController = loader.getController();
+                addController.init(this, model, root);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             return addController.getRoot();
         }
@@ -182,18 +162,15 @@ public class ViewHandler {
 
     public Region loadMainView() {
         {
-            if (mainController == null) {
-                try {
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource(MAIN));
-                    Region root = loader.load();
-                    mainController = loader.getController();
-                    mainController.init(this, model, root);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                mainController.reset();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(MAIN));
+                Region root = loader.load();
+
+                mainController = loader.getController();
+                mainController.init(this, model, root);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             return mainController.getRoot();
         }

@@ -1,21 +1,41 @@
 package Mediator;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import Model.CourseList;
+import Model.RoomList;
+import Model.ExaminerList;
+import Model.ExamList;
 
 
 import Model.*;
 
 public class ModelManager implements Model {
-    CourseList courseList = new CourseList();
-    ExaminerList examinerList = new ExaminerList();
-    RoomList roomList = new RoomList();
-    ExamList examList = new ExamList();
+    private CourseList courseList ;
+    private ExaminerList examinerList ;
+    private RoomList roomList ;
+    private ExamList examList ;
 
-    private NotepadAdapterClass note = new NotepadAdapterClass();
-    private Backup backup = new Backup();
+    private NotepadAdapterClass note;
+
+    public ModelManager() throws IOException
+    {
+        note = new NotepadAdapterClass();
+
+        courseList = new CourseList();
+        examinerList = new ExaminerList();
+        roomList = new RoomList();
+        examList = new ExamList();
+
+        courseList = note.loadCourseList();
+        examinerList = note.loadExaminerList();
+        roomList = note.loadRoomList();
+        examList = note.loadExamList();
+    }
+
 
 
     @Override
@@ -27,133 +47,89 @@ public class ModelManager implements Model {
     }
     //-------------Room--------------------------------------------------
     @Override
-    public void saveRoom(Room room) throws FileNotFoundException
+    public void saveRoom(Room room) throws IOException
     {
         roomList.addRoom(room);
         orderRoomList();
         note.saveRoomList(roomList);
-        backup.saveRoomList(roomList);
     }
 
     @Override
-    public void deleteRoom(Room room) throws FileNotFoundException
+    public void deleteRoom(Room room) throws IOException
     {
         roomList.removeRoom(room);
         note.saveRoomList(roomList);
-        backup.saveRoomList(roomList);
     }
 
     //----------------Course----------------------------------------------
     @Override
-    public void saveCourse(Course course) throws FileNotFoundException
+    public void saveCourse(Course course) throws IOException
     {
         courseList.addCourse(course);
         orderCourseList();
         note.saveCourseList(courseList);
-        backup.saveCourseList(courseList);
     }
 
     @Override
-    public void deleteCourse(Course course) throws FileNotFoundException
+    public void deleteCourse(String course) throws IOException
     {
         courseList.removeCourse(course);
         note.saveCourseList(courseList);
-        backup.saveCourseList(courseList);
     }
 
     //----------------Exam-------------------------------------------------
 
     @Override
-    public void deleteExam(Exam exam) throws FileNotFoundException
+    public void deleteExam(Exam exam) throws IOException
     {
         examList.removeExam(exam);
         note.saveExamList(examList);
-        backup.saveExamList(examList);
     }
 
     @Override
-    public void saveExam(Exam exam) throws FileNotFoundException
+    public void saveExam(Exam exam) throws IOException
     {
         examList.addExam(exam);
         note.saveExamList(examList);
-        backup.saveExamList(examList);
     }
 
     //---------------Examiner-----------------------------------------------
 
     @Override
-    public void saveExaminer(Examiner examiner) throws FileNotFoundException
+    public void saveExaminer(Examiner examiner) throws IOException
     {
         examinerList.addExaminer(examiner);
         orderExaminerList();
         note.saveExaminerList(examinerList);
-        backup.saveExaminerList(examinerList);
     }
 
     @Override
-    public void deleteExaminer(Examiner examiner) throws FileNotFoundException
+    public void deleteExaminer(Examiner examiner) throws IOException
     {
         examinerList.removeExaminer(examiner);
         note.saveExaminerList(examinerList);
-        backup.saveExaminerList(examinerList);
     }
 
 
     //-----------------Get Lists-------------------------------------------
     @Override
     public ArrayList<Course> getDisplayableCourseList() {
-        if(courseList.getSize() != 0) {
-            ArrayList<Course> a = new ArrayList();
-            for (int i = 0; i < courseList.getSize(); i++) {
-                a.add(courseList.getCourse(i));
-            }
-            return a;
-        }else {
-            return new ArrayList<Course>();
-        }
+        return courseList.getCourses();
     }
 
     @Override
     public ArrayList<Examiner> getDisplayableExaminerList() {
-        if (examinerList.getSize() != 0) {
-            ArrayList<Examiner> a = new ArrayList();
-            for (int i = 0; i < examinerList.getSize(); i++) {
-                a.add(examinerList.getExaminer(i));
-            }
-            return a;
-        }else {
-            return new ArrayList<Examiner>();
-        }
+        return examinerList.getExaminers();
     }
 
     @Override
     public ArrayList<Room> getDisplayableRoomList() {
-            if (roomList.getSize()!=0) {
-                ArrayList<Room> a = new ArrayList();
-                for (int i = 0; i < roomList.getSize(); i++) {
-                    a.add(roomList.getRoomByIndex(i));
-                }
-                return a;
-            }else  {
-                return new ArrayList<Room>();
-            }
+        return roomList.getRooms();
     }
 
     @Override
     public ArrayList<Exam> getDisplayableExamList() {
-        if(examList.getSize() != 0)
-        {
-            ArrayList<Exam> a = new ArrayList<>();
-            for(int i = 0; i < examList.getSize(); i++)
-            {
-                a.add(examList.getExam(i));
-            }
-            return a;
-        }
-        else
-        {
-            return new ArrayList<Exam>();
-        }
+        return examList.getExams();
     }
 
     //---------------------Order Lists--------------------------------------
@@ -198,25 +174,25 @@ public class ModelManager implements Model {
 
     //------------------Loading all lists------------------------------------
     @Override
-    public void loadingExamList()
+    public void loadingExamList() throws IOException
     {
         examList =  note.loadExamList();
     }
 
     @Override
-    public void loadingRoomList()
+    public void loadingRoomList() throws IOException
     {
         roomList = note.loadRoomList();
     }
 
     @Override
-    public void loadingExaminerList()
+    public void loadingExaminerList() throws IOException
     {
         examinerList = note.loadExaminerList();
     }
 
     @Override
-    public void loadingCourseList()
+    public void loadingCourseList() throws IOException
     {
         courseList = note.loadCourseList();
     }

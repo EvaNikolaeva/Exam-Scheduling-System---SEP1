@@ -9,7 +9,6 @@ package Model;
 public class Room {
     private Equipment equipment;
     private String room;
-    private boolean[] availability = new boolean[31];
     /**
      * The constant ROOM_LIST.
      */
@@ -42,11 +41,6 @@ public class Room {
         } else {
             System.out.println("success");
         }
-        for (int i = 0; i < availability.length; i++) {
-            this.availability[i] = true;
-        }
-
-
     }
 
     /**
@@ -65,16 +59,6 @@ public class Room {
      */
     public String getRoom() {
         return room;
-    }
-
-    /**
-     * Getter for availability.
-     *
-     * @param index the index of the room
-     * @return the availability of the room
-     */
-    public boolean getAvailability(int index) {
-        return availability[index];
     }
 
     /**
@@ -107,31 +91,6 @@ public class Room {
             }
         }
     }
-
-    /**
-     * Setter for availability.
-     *
-     * @param availability the availability of the room
-     * @param index        the day
-     */
-    public void setAvailability(boolean availability, int index) {
-        this.availability[index] = availability;
-    }
-
-    /**
-     * Returning if a room is available or not on a specific day.
-     *
-     * @param room the room number
-     * @param day  the day
-     * @return true if the room is available. Otherwise return false.
-     */
-    public boolean isAvailable(Room room, int day) {
-        if (room.getAvailability(day) == true) {
-            return true;
-        }
-        return false;
-    }
-
     /**
      * Returning the information about a room.
      * @return a string including information about a room
@@ -149,7 +108,6 @@ public class Room {
         if (!(obj instanceof Room))
             return false;
         Room other = (Room) obj;
-        return equipment.equals(other.equipment) && room.equals(other.room) &&
-                availability == other.availability;
+        return equipment.equals(other.equipment) && room.equals(other.room);
     }
 }

@@ -20,6 +20,10 @@ public class CourseList
         this.courses = new ArrayList<>();
     }
 
+    public ArrayList<Course> getCourses(){
+        return courses;
+    }
+
     /**
      * Setter for the list.
      *
@@ -44,9 +48,13 @@ public class CourseList
      *
      * @param course the course removed
      */
-    public void removeCourse(Course course)
+    public void removeCourse(String name)
     {
-        courses.remove(course);
+        for(int i =0; i < courses.size();i++){
+            if(courses.get(i).getName().equals(name)){
+                courses.remove(i);
+            }
+        }
     }
 
     /**

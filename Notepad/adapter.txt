@@ -1,1 +1,0 @@
-[{"date":{"day":10,"month":1,"year":2020},"course":"RWD","type":"Written","examiner1":{"firstName":"Line","lastName":"Egsgaard","phoneNumber":"0987","teacherId":"1234","availability":true,"course":"RWD"},"room":{"equipment":{"hasCables":true,"hasProjector":true,"numberOfChairs":10,"numberOfTables":10},"room":"A201","availability":true}}]
