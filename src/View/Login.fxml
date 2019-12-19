@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="307.0" prefWidth="231.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginController">
+<AnchorPane prefHeight="307.0" prefWidth="231.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginController">
     <children>
-        <PasswordField fx:id="passwordField" layoutX="97.0" layoutY="127.0" prefHeight="25.0" prefWidth="118.0" promptText="Pass..." onKeyTyped="#OnEnterTyped"/>
+        <PasswordField fx:id="passwordField" layoutX="97.0" layoutY="127.0" onKeyTyped="#OnEnterTyped" prefHeight="25.0" prefWidth="118.0" promptText="Pass..." />
         <TextField fx:id="userNameField" layoutX="97.0" layoutY="80.0" prefHeight="25.0" prefWidth="118.0" promptText="User..." />
         <Button fx:id="loginButton" layoutX="31.0" layoutY="221.0" mnemonicParsing="false" onAction="#LoginButtonPressed" prefHeight="74.0" prefWidth="176.0" text="Login">
             <font>
@@ -35,7 +32,6 @@
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </opaqueInsets>
         </Label>
-      <Label fx:id="errorLabel" layoutX="17.0" layoutY="159.0" prefHeight="17.0" prefWidth="192.0" text="Error label" textFill="#fc0000" />
     </children>
    <padding>
       <Insets right="10.0" top="10.0" />
