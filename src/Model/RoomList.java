@@ -19,6 +19,11 @@ public class RoomList
         this.rooms = new ArrayList<>();
     }
 
+    /**
+     * Getter for rooms.
+     *
+     * @return an ArrayList including all rooms.
+     */
     public ArrayList<Room> getRooms(){
         return rooms;
     }

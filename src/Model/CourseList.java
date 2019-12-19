@@ -20,6 +20,11 @@ public class CourseList
         this.courses = new ArrayList<>();
     }
 
+    /**
+     * Getter for courses.
+     *
+     * @return an ArrayList including all courses
+     */
     public ArrayList<Course> getCourses(){
         return courses;
     }
