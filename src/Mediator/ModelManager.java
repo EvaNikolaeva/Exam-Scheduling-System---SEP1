@@ -19,11 +19,11 @@ public class ModelManager implements Model {
     private RoomList roomList ;
     private ExamList examList ;
 
-    private NotepadAdapterClass note;
+    private ExamSchedulingFile note;
 
     public ModelManager() throws IOException
     {
-        note = new NotepadAdapterClass();
+        note = new ExamSchedulingFile();
 
         courseList = new CourseList();
         examinerList = new ExaminerList();

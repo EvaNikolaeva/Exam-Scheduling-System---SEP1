@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class NotepadAdapterClass
+public class ExamSchedulingFile
 {
 
     public void saveExamList(ExamList toSave) throws IOException

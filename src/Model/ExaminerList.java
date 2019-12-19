@@ -38,19 +38,6 @@ public class ExaminerList
         return examinersByCourse;
     }
 
-    //public ArrayList<Examiner> seeAvailableExaminers(boolean availability)
-    //{
-        //ArrayList<Examiner> availableExaminers = new ArrayList<>();
-        //for (int i = 0; i < examiners.size(); i++)
-        //{
-            //if (examiners.get(i).isAvailable(i) == true)
-            //{
-              //  availableExaminers.add(examiners.get(i));
-            //}
-        //}
-        //return availableExaminers;
-    //}
-
     public String toString()
     {
         String s = "";

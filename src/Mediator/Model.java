@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import Model.*;
 
 public interface Model {
-    //todo: add model instance variables.
+
 
 
     public boolean validateLogin(String username, String password);

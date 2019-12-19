@@ -46,7 +46,7 @@ public class CourseList
     /**
      * Removing a course from the list.
      *
-     * @param course the course removed
+     * @param name the course removed
      */
     public void removeCourse(String name)
     {

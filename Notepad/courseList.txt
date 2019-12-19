@@ -1,1 +1,1 @@
-{"courses":[]}
+{"courses":[{"name":"SDJ1Z","type":"RadioButton[id\u003dCourseRadioButtonOral, styleClass\u003dradio-button]\u0027Oral\u0027","numberOfStudents":20}]}
