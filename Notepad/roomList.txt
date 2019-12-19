@@ -1,1 +1,1 @@
-{"rooms":[]}
+{"rooms":[{"equipment":{"hasCables":true,"hasProjector":true,"numberOfChairs":15,"numberOfTables":5},"room":"A001"},{"equipment":{"hasCables":true,"hasProjector":true,"numberOfChairs":-3,"numberOfTables":5},"room":"A001"}]}

@@ -1,1 +1,1 @@
-{"examiners":[{"name":"Steffen","phoneNumber":"12345","teacherId":"1234","availability":true,"course":{"name":"SDJ1Z","type":"RadioButton[id\u003dCourseRadioButtonOral, styleClass\u003dradio-button]\u0027Oral\u0027","numberOfStudents":20},"external":false}]}
+{"examiners":[{"name":"Steffen","phoneNumber":"11111","teacherId":"1234","availability":true,"course":{"name":"SDJ1X","type":"oral","numberOfStudents":30},"external":false}]}

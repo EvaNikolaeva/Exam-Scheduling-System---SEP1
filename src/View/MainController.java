@@ -69,9 +69,15 @@ public class MainController{
         return this.root;
     }
 
-    public void onMenuItemSelected(ActionEvent actionEvent) throws MalformedURLException {
-        URL homepage= new URL("https://www.facebook.com/marton.pentek.1");
-        openWebpage(homepage);
+    public void onMenuItemSelected(ActionEvent actionEvent) {
+        try{
+            URL homepage= new URL("file:///E:/SEP1/Exam-Scheduling-System-SEP1/WebSite/aboutus.html");
+            openWebpage(homepage);
+        }
+        catch (MalformedURLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static boolean openWebpage(URI uri) {

@@ -1,1 +1,1 @@
-{"courses":[]}
+{"courses":[{"name":"SDJ1X","type":"oral","numberOfStudents":30}]}
